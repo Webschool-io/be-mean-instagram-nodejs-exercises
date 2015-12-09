@@ -4,7 +4,7 @@
 
 **autor:** LUCAS DA SILVA MOREIRA
 
-**date:** //execute Date.now() e coloque o resultado aqui
+**date:** 1449700152468
 
 ## Explique como um processo síncrono e assíncrono roda no Node.js, dê um exemplo para cada.
 
