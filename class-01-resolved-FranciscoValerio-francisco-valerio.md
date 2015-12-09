@@ -26,7 +26,7 @@ Síncrono:
 
 ## Como o V8 executa JavaScript? Demonstre 1 exemplo com código ou imagem.
 
-https://github.com/FranciscoValerio/be-mean-instagram-nodejs-exercises/blob/master/img/v8-sample.jpg
+https://github.com/FranciscoValerio/imagens/blob/master/img-be-mean/v8-sample.jpg
 
 ## Qual a diferença entre um sistema single para um multi-thread?
 
