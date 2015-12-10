@@ -2,12 +2,7 @@
 ####Robson Fagundes - [http://robsonfagundes.github.io](robsonfagundes.github.io) - robsonfagundes@gmail.com
 
 ## 1. Explique como um processo síncrono e assíncrono roda no Node.js, dê um exemplo para cada.
-#####Analogia
-Imaginemos que um emissor está a enviar uma mensagem de texto através de um tubo e que a mensagem é enviada recorrendo a bolas, cada bola com uma letra. Quando as bolas chegam ao receptor, a mensagem tem que ser remontada, ou seja, têm que se colocar as bolas pela ordem correta, para se voltar a ter a mensagem.
-
-- **Síncrono:** as bolas têm que ser enviadas e recebidas de forma sincronizada, mantendo uma ordem bem definida: a primeira bola (letra) a ser enviada, tem que ser a primeira a ser recebida e assim sucessivamente.
-
-- **Assíncrono:** cada bola tem um número de sequência, que permite que seja colocada na sua posição. Isto permite que as bolas sejam enviadas e recebidas por qualquer ordem, uma vez que esse número de sequência identifica a posição de cada bola (letra) na mensagem.
+Node é uma única aplicação single threaded, mas suporta a simultaneidade via conceito de eventos e callbacks. Como cada API do Node são assíncronas e sendo um único segmento, ele usa a função async chamadas para manter a simultaneidade. Node usa observador padrão. Node mantém um ciclo de eventos e sempre que qualquer tarefa de ficar concluída, ele aciona o evento correspondente que sinaliza a função de ouvinte de evento para obter executado.
 
 ## 2. Como o V8 executa o JavaScript? Demonstre 1 exemplo com código ou imagem.
 [![Como o V8 executa o JavaScript](https://raw.githubusercontent.com/robsonfagundes/be-mean-instagram-nodejs-exercises/master/imgs/nodejs-event-loop.png)](https://raw.githubusercontent.com/robsonfagundes/be-mean-instagram-nodejs-exercises/master/imgs/nodejs-event-loop.png "Como o V8 executa o JavaScript")
