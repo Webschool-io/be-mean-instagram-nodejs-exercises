@@ -1,3 +1,7 @@
+#.gitignore 
+.gitignore 
+README.md
+
 # Logs
 logs
 *.log
