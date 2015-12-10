@@ -1,8 +1,8 @@
-# MongoDB - Aula 01 - Exercício
+# NodeJS - Aula 01 - Exercício
 ####Robson Fagundes - [http://robsonfagundes.github.io](robsonfagundes.github.io) - robsonfagundes@gmail.com
 
 ## 1. Explique como um processo síncrono e assíncrono roda no Node.js, dê um exemplo para cada.
-Node é uma única aplicação single threaded, mas suporta a simultaneidade via conceito de eventos e callbacks. Como cada API do Node são assíncronas e sendo um único segmento, ele usa a função async chamadas para manter a simultaneidade. Node usa observador padrão. Node mantém um ciclo de eventos e sempre que qualquer tarefa de ficar concluída, ele aciona o evento correspondente que sinaliza a função de ouvinte de evento para obter executado.
+Node é uma aplicação single threaded, mas suporta a simultaneidade via conceito de eventos e callbacks. Como cada API do Node são assíncronas e sendo um único segmento, ele usa a função async chamadas para manter a simultaneidade. Node usa observador padrão. Node mantém um ciclo de eventos e sempre que qualquer tarefa de ficar concluída, ele aciona o evento correspondente que sinaliza a função de ouvinte de evento para obter executado.
 
 ## 2. Como o V8 executa o JavaScript? Demonstre 1 exemplo com código ou imagem.
 [![Como o V8 executa o JavaScript](https://raw.githubusercontent.com/robsonfagundes/be-mean-instagram-nodejs-exercises/master/imgs/nodejs-event-loop.png)](https://raw.githubusercontent.com/robsonfagundes/be-mean-instagram-nodejs-exercises/master/imgs/nodejs-event-loop.png "Como o V8 executa o JavaScript")
