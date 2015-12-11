@@ -51,39 +51,38 @@ A querystring neste exemplo consiste de um campo ou variável, tecnicamente cham
 
 'use strict';
 
-var date = ( new Date()).toJSON();
+var date = (new Date()).toJSON();
 
-const http = require('http')
-	, url = require('url')
-	, SUCCESS = { 
-		version: "1.0"
-		, name: 'Be MEAN'
-		, created_at: date
-	}
-	, ERROR = {
-		message: "Not Found!"
-	};
+var http = require('http')
+	  , SUCCESS = {
+		  version: '1.0'
+	  	, name: 'Be MEAN'
+	  	, returned_at: date
+	  	}
+	  ,	ERROR = {
+	  		message: "Not Found!"
+	  	};
+var url = require('url');
 
-http
-.createServer( function ( request, response ){
-
-	var url_parse = url.parse(request.url);
+http.createServer(function(req, res) {
+	
+	var url_parse = url.parse(req.url);
 
 	switch(url_parse.pathname) {
 		case '/api/pokemons/create':
 		case '/api/pokemons/read':
 		case '/api/pokemons/update':
 		case '/api/pokemons/delete':
-			response.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8'});
-			response.write(JSON.stringify(SUCCESS));			
+			res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8'});
+			res.write(JSON.stringify(SUCCESS));			
 			break;
 		default:
-			response.writeHead(404, { 'Content-Type': 'application/json; charset=utf-8'});
-			response.write(JSON.stringify(ERROR));
+			res.writeHead(404, { 'Content-Type': 'application/json; charset=utf-8'});
+			res.write(JSON.stringify(ERROR));
 	}
 
-	response.end();	
-})
-.listen(3000, function() {
-	console.log('Servidor rodando em http://localhost:3000');
+	res.end();
+
+}).listen(3000, function() {
+	console.log('Servidor rodando em localhost:3000');
 });
