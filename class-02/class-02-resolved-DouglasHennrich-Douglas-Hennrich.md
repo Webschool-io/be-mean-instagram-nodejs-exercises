@@ -15,18 +15,23 @@
 Os `Status Codes` foram inventados para padronizar os tipos de retorno do servidor, facilitando o entendimento deles.
 
 * **1XX** - Information
+
 ![](https://http.cat/101)
 
 * **2XX** - Successful
+
 ![](https://http.cat/206)
 
 * **3XX** - Redirection
+
 ![](https://http.cat/307)
 
 * **4XX** - Client Error
+
 ![](https://http.cat/409)
 
 * **5XX** - Server Error
+
 ![](https://http.cat/509)
 
 ## Explique o que é cada parâmetro da função recebida no `createServer`.
