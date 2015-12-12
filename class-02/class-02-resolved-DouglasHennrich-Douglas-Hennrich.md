@@ -1,7 +1,9 @@
 # Node.js - Aula 02 - Exercício
 **User:** [DouglasHennrich](https://github.com/DouglasHennrich)
+
 **Autor:** Douglas Hennrich
-**Date:** Date.now()
+
+**Date:** 1449889648726
 
 ## Quais são os 4 verbos que utilizamos para o CRUD?
 * **C** reate   - `POST`
