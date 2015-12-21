@@ -4,7 +4,7 @@
 **autor:** Douglas Hennrich
 
 ## Por que quando requisitamos ao nosso servidor de *Query String*, **com o Chrome**, ele executa 2 requisições, sendo a última "*vazia*"?
-
+Isso ocorre, pois o Chrome faz a primeira requisição para puxar os dados da `Querystring` e a segunda requisição é para puxar o `fav.icon` do site
 
 ## Qual a DIFERENÇA entre o GET e o POST?
 * **GET**
