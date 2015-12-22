@@ -3,10 +3,10 @@
 autor: Carlos Alberto Araujo Barreto
 
 ## 01 - Quais são os 4 verbos que utilizamos para o CRUD?
-Create: Criar
-Retrieve/Read: Recuperar/Ler
-Update: Atualizar
-Delete: Deletar
+Create: Criar - **POST**
+Retrieve/Read: Recuperar/Ler - **GET*
+Update: Atualizar - **PUT**
+Delete: Deletar - **DELETE**
 
 ## 02 - Para que foram inventados os Status Codes? Dẽ exemplo de 1 código por grupo e a imagem do Cat Status Code.
 
