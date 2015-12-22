@@ -36,3 +36,10 @@ HEADERS:{"server":"Cowboy","content-length":"0","connection":"close","x-powered-
 Dados finalizados:
 
 ## Escolha uma **API externa** e crie um script para fazer um GET nela **mostrando o resultado com HTML**.
+
+**CONSULTADO API (http://fipeapi.appspot.com/)**
+
+node .\http-get-fipe.js
+STATUS:200
+HEADERS:{"cache-control":"no-cache","content-type":"application/json; charset=utf-8","date":"Tue, 22 Dec 2015 00:55:16 GMT","server":"Google Frontend","content-length":"1032","connection":"close"}
+Dados finalizados: [{"fipe_marca": "Fiat", "fipe_codigo": "2014-1", "name": "2014 Gasolina", "marca": "FIAT", "key": "2014-1", "veiculo": "Palio 1.0 ECONOMY Fire Flex 8V 4p", "id": "2014-1"}, {"fipe_marca": "Fiat", "fipe_codigo": "2013-1", "name": "2013 Gasolina", "marca": "FIAT", "key": "2013-1", "veiculo": "Palio 1.0 ECONOMY Fire Flex 8V 4p", "id": "2013-1"}, {"fipe_marca": "Fiat", "fipe_codigo": "2012-1", "name": "2012 Gasolina", "marca": "FIAT", "key": "2012-1", "veiculo": "Palio 1.0 ECONOMY Fire Flex 8V 4p", "id": "2012-1"}, {"fipe_marca": "Fiat", "fipe_codigo": "2011-1", "name": "2011 Gasolina", "marca": "FIAT", "key": "2011-1", "veiculo": "Palio 1.0 ECONOMY Fire Flex 8V 4p", "id": "2011-1"}, {"fipe_marca": "Fiat", "fipe_codigo": "2010-1", "name": "2010 Gasolina", "marca": "FIAT", "key": "2010-1", "veiculo": "Palio 1.0 ECONOMY Fire Flex 8V 4p", "id": "2010-1"}, {"fipe_marca": "Fiat", "fipe_codigo": "2009-1", "name": "2009 Gasolina", "marca": "FIAT", "key": "2009-1", "veiculo": "Palio 1.0 ECONOMY Fire Flex 8V 4p", "id": "2009-1"}]
