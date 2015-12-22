@@ -4,7 +4,7 @@ autor: Carlos Alberto Araujo Barreto
 
 ## 01 - Quais são os 4 verbos que utilizamos para o CRUD?
 Create: Criar - **POST**
-Retrieve/Read: Recuperar/Ler - **GET*
+Retrieve/Read: Recuperar/Ler - **GET**
 Update: Atualizar - **PUT**
 Delete: Deletar - **DELETE**
 
