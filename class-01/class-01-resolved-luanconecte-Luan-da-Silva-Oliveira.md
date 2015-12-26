@@ -61,7 +61,7 @@ Como podemos perceber nos exemplos a cima, no processo síncrono o File System l
 
 O Node usa o JavaScript V8 VM (Virtual Machine) que é a engine criada pela equipe do google para ser utilizada em seu navegador Google Chrome. O V8 é um projeto open source de alta performace escrito em C++, ele funciona compilando o código JavaScript e manipulando a alocação de memória de objetos que já não são mais necessários.
 
-http://www.haneycodes.net/wp-content/uploads/2014/03/node-processing-model.png
+<img src="http://www.haneycodes.net/wp-content/uploads/2014/03/node-processing-model.png" width="100%" />
 
 
 # 3. Qual a diferença entre um sistema single para um multi-thread?
