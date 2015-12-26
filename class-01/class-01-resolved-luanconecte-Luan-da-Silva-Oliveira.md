@@ -3,7 +3,6 @@
 
 # 1. Explique como um processo síncrono e assíncrono roda no Node.js, dê um exemplo para cada.
 
-```
 A beleza do NodeJs está em sua assincronicidade. Esse processo faz com que ao executarmos um evento de entrada ou saída (I/O) no sistema, o mesmo não fique bloqueado, aguardando o término da operação, para só então executar uma nova atividade.
 No processo síncrono acontece uma fila de processos na qual o evento sucessor depende do termino do evento antecessor para ser executado.
 
