@@ -4,9 +4,9 @@
 
 
 # 1 -  Quais são os 4 verbos que utilizamos para o CRUD?
-+ CREATE
-+ RETRIVE/READ
-+ UPDATE
++ POST
++ GET
++ PUT
 + DELETE
 
 
