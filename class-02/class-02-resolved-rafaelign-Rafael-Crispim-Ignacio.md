@@ -13,15 +13,37 @@
 ```
 
 # 2. Para que foram inventados os Status Codes? Dê um exemplo de 1 código por grupo e a imagem do Cat Status Code
-
-```js
 Os `Status Codes` foram criados para identificarmos como uma requisição foi recebida pelo servidor.
-101 - Switching protocols ![Image 101](https://http.cat/101)
-200 - OK ![Image 200](https://http.cat/200)
-301 - Moved Permanently ![Image 301](https://http.cat/301)
-404 - Not Found ![Image 404](https://http.cat/404)
-500 - Internal Server Error ![Image 500](https://http.cat/500)
+
 ```
+101 - Switching protocols
+```
+
+![Image 101](https://http.cat/101)
+
+```
+200 - OK
+```
+
+![Image 200](https://http.cat/200)
+
+```
+301 - Moved Permanently
+```
+
+![Image 301](https://http.cat/301) 
+
+```
+404 - Not Found
+```
+
+![Image 404](https://http.cat/404) 
+
+```
+500 - Internal Server Error
+```
+
+![Image 500](https://http.cat/500)
 
 # 3. Explique o que é cada parâmetro da função recebida no 'createServer'.
 
