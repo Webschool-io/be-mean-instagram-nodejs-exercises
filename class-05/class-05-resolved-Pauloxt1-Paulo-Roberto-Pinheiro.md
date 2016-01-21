@@ -194,7 +194,6 @@ undefined
 ## Desafio: Criar um servidor web de arquivos estáticos.
 ```js
 'use strict';
-'use strict';
 
 const http = require('http'), 
 fs = require('fs'), 
