@@ -18,8 +18,8 @@ Síncrono:
 	já tenha sido atendido.
 
 ## Como o V8 executa JavaScript? Demonstre 1 exemplo com código ou imagem.
-
-https://raw.githubusercontent.com/higordiego/be-mean-instagram-nodejs-exercises/master/class-01/img/chakra-pipeline.png
+![Imagem V8]
+(http://static.17ky.net/Images/20151215/6358579084581674429956854.png)
 
 ## Qual a diferença entre um sistema single para um multi-thread?
 
