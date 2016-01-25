@@ -20,31 +20,30 @@ v5.4.1
 PS C:\Be-Mean\NodeJS\arquivos-api> npm i --save mongoose
 PS C:\Be-Mean\NodeJS\arquivos-api> npm i --save-dev colors
 PS C:\Be-Mean\NodeJS\arquivos-api> npm i --save-optional colors
-
 PS C:\Be-Mean\NodeJS\arquivos-api> cat .\package.json
 {
-  "name": "arquivos-api",
-  "version": "0.0.1",
-  "description": "API que fornece arquivos",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [
+   "name": "arquivos-api",
+   "version": "0.0.1",
+   "description": "API que fornece arquivos",
+   "main": "index.js",
+   "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+   },
+   "keywords": [
     "arquivos",
     "css",
     "html",
     "js"
-  ],
-  "author": "FranciscoValerio",
-  "license": "WTFPL",
-  "dependencies": {
-    "mongoose": "^4.3.6"
-  },
-  "devDependencies": {
-    "jasmine": "^2.4.1"
-  },
-  "optionalDependencies": {
+   ],
+   "author": "FranciscoValerio",
+   "license": "WTFPL",
+   "dependencies": {
+      "mongoose": "^4.3.6"
+   },
+   "devDependencies": {
+      "jasmine": "^2.4.1"
+   },
+   "optionalDependencies": {
     "colors": "^1.1.2"
   }
 }
@@ -53,35 +52,36 @@ PS C:\Be-Mean\NodeJS\arquivos-api> cat .\package.json
 
 PS C:\Be-Mean\NodeJS\arquivos-api> cat .\package.json
 {
-  "name": "arquivos-api",
-  "version": "0.0.1",
-  "description": "API que fornece arquivos",
-  "main": "index.js",
-  "scripts": {
-    "roda": "node script.js"
-  },
-  "keywords": [
-    "arquivos",
-    "css",
-    "html",
-    "js"
-  ],
-  "author": "FranciscoValerio",
-  "license": "WTFPL",
-  "dependencies": {
-    "mongoose": "^4.3.6"
-  },
-  "devDependencies": {
-    "jasmine": "^2.4.1"
-  },
-  "optionalDependencies": {
-    "colors": "^1.1.2"
-  }
+   "name": "arquivos-api",
+   "version": "0.0.1",
+   "description": "API que fornece arquivos",
+   "main": "index.js",
+   "scripts": {
+      "roda": "node script.js"
+   },
+   "keywords": [
+      "arquivos",
+      "css",
+      "html",
+      "js"
+   ],
+   "author": "FranciscoValerio",
+   "license": "WTFPL",
+   "dependencies": {
+      "mongoose": "^4.3.6"
+   },
+   "devDependencies": {
+      "jasmine": "^2.4.1"
+   },
+   "optionalDependencies": {
+      "colors": "^1.1.2"
+   }
 }
+
 
 >Arquivo script.js
 ```JS
-console.log("Rodei!");
+console.log( "Rodei!" );
 ```
 
 > Executando:
@@ -123,16 +123,13 @@ console.log(process.pid);
 
 ## Explique como funciona e de um exemplo de `process`.
 
-**process** é utilizado quando queremos executar algo quando algum evento ocorrer, ou seja, quando um server iniciar por exemplo:
+**process** é utilizado quando queremos executar algo quando algum evento ocorrer, ou seja, mostrar uma mensagem para o usuário ao encerrar uma sessão no terminal:
 
 ```JS
 'use strict';
 
-const http = require('http');
-
-let server = http.createServer((req, res) => {});
-
-server.listen(3000, () => {
-   console.log('I am on');
-});
+process.on('SIGINT', () => {
+   console.log('eu sai!');
+   process.exit(0);
+})
 ```
