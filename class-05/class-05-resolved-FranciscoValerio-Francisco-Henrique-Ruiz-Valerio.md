@@ -6,10 +6,12 @@
 
 ## Instale algum gerenciador de versão do Node.js e instale a versão mais atual como padrão, enquanto escrevo é a versão 5.4.0
 
+```
 PS C:\Users\franc> npm -v
 3.3.12
 PS C:\Users\franc> node -v
 v5.4.1
+```
 
 ## Inicie um projeto novo para essa aula, com o `npm` e instale, salvando no `package.json`:
 
@@ -17,6 +19,7 @@ v5.4.1
    * 1 dependência local de desenvolvimento
    * 1 dependência local opcional
 
+```
 PS C:\Be-Mean\NodeJS\arquivos-api> npm i --save mongoose
 PS C:\Be-Mean\NodeJS\arquivos-api> npm i --save-dev colors
 PS C:\Be-Mean\NodeJS\arquivos-api> npm i --save-optional colors
@@ -47,9 +50,11 @@ PS C:\Be-Mean\NodeJS\arquivos-api> cat .\package.json
     "colors": "^1.1.2"
   }
 }
+```
 
 ## Crie e execute um script, via `npm`, que mostre uma mensagem no console com a global, que possui caminho para o diretório atual.
 
+```
 PS C:\Be-Mean\NodeJS\arquivos-api> cat .\package.json
 {
    "name": "arquivos-api",
@@ -77,6 +82,7 @@ PS C:\Be-Mean\NodeJS\arquivos-api> cat .\package.json
       "colors": "^1.1.2"
    }
 }
+```
 
 
 >Arquivo script.js
@@ -85,12 +91,12 @@ console.log( "Rodei!" );
 ```
 
 > Executando:
+```
 PS C:\Be-Mean\NodeJS\arquivos-api> npm run roda
-
 > arquivos-api@0.0.1 roda C:\Be-Mean\NodeJS\arquivos-api
 > node script.js
-
 C:\Be-Mean\NodeJS\arquivos-api
+```
 
 ## Cite 5 globais do Node.js e pelo menos 1 exemplo de cada.
 
