@@ -55,43 +55,14 @@ PS C:\Be-Mean\NodeJS\arquivos-api> cat .\package.json
 ## Crie e execute um script, via `npm`, que mostre uma mensagem no console com a global, que possui caminho para o diretório atual.
 
 ```
-PS C:\Be-Mean\NodeJS\arquivos-api> cat .\package.json
-{
-   "name": "arquivos-api",
-   "version": "0.0.1",
-   "description": "API que fornece arquivos",
-   "main": "index.js",
-   "scripts": {
-      "roda": "node script.js"
-   },
-   "keywords": [
-      "arquivos",
-      "css",
-      "html",
-      "js"
-   ],
-   "author": "FranciscoValerio",
-   "license": "WTFPL",
-   "dependencies": {
-      "mongoose": "^4.3.6"
-   },
-   "devDependencies": {
-      "jasmine": "^2.4.1"
-   },
-   "optionalDependencies": {
-      "colors": "^1.1.2"
-   }
+//package.json
+"scripts": {
+   "roda": "node script.js"
 }
-```
 
+//Arquivo script.js
+console.log( __dirname );
 
->Arquivo script.js
-```JS
-console.log( "Rodei!" );
-```
-
-> Executando:
-```
 PS C:\Be-Mean\NodeJS\arquivos-api> npm run roda
 > arquivos-api@0.0.1 roda C:\Be-Mean\NodeJS\arquivos-api
 > node script.js
@@ -129,13 +100,17 @@ console.log(process.pid);
 
 ## Explique como funciona e de um exemplo de `process`.
 
-**process** é utilizado quando queremos executar algo quando algum evento ocorrer, ou seja, mostrar uma mensagem para o usuário ao encerrar uma sessão no terminal:
+O objeto process é um objeto global e pode ser acessado de qualquer lugar. É uma instância de EventEmitter. Normalmente é utilizado quando queremos executar algo quando algum evento ocorrer.
 
 ```JS
-'use strict';
+//Um exemplo que registra cada rejeição não processada para o console
 
-process.on('SIGINT', () => {
-   console.log('eu sai!');
-   process.exit(0);
-})
+process.on('unhandledRejection',  (reason, p)  =>  {
+   console.log("Rejeição Unhandled em: Promise", p,  "razão:", reason);     
+});
+
+// e aqui um exemplo que irá chamar o unhandledRejection
+somePromise.then((response) => {
+  return reportToUser(JSON.parse(response));
+});
 ```
