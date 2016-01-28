@@ -5,10 +5,12 @@
 
 ## Quais são os 4 verbos que utilizamos para o CRUD?
 
-- Create
-- Retrieve/Read
-- Update
-- Delete
+|CRUD      | HTTP   |
+|----------|--------|
+|Create    | POST   |
+|Read      | GET    |
+|Update    | PUT    |
+|Delete    | DELETE |
 
 ## Para que foram inventados os Status Codes? Dê exemplo de 1 código por grupo e a imagem do [Cat Status Code](https://http.cat/).
 
