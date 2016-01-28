@@ -2,10 +2,10 @@
 autor: **Sergio Diniz Correia**
 
 # 1 - Quais são os 4 verbos que utilizamos para o CRUD?
-+ **Create** = Criar
-+ **Retrieve/Read** = Ler
-+ **Update** = Atualizar
-+ **Delete** = Deletar
++ **Get**
++ **Put**
++ **Post**
++ **Delete**
 
 # 2 - Para que foram inventados os Status Codes? Dê exemplo de 1 código por grupo e a imagem do Cat Status Code.
 O status codes é a padronização dos tipos de retorno do servidor, o código retornado é uma informação usado para diagnostico.
