@@ -6,10 +6,10 @@
 **Date:** Thu Jan 28 2016 18:53:31 GMT-0300 (BRT)
 
 ## Quais são os 4 verbos que utilizamos para o CRUD?
-C - Crear
-R - Leitura
-U - Alterar
-D - Deletar
+C - Crear - POST
+R - Leitura - GET
+U - Alterar - PUT
+D - Deletar - DELETE
 
 ## Para que foram inventados os Status Codes? Dê exemplo de 1 código por grupo e a imagem do [Cat Status Code](https://http.cat/).
 O 'Status Code' foi inventado para padronização de erro e facilitando a conversa de cliente e servidor.
