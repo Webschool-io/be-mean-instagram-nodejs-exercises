@@ -19,22 +19,27 @@ Informar ao cliente, através de códigos com significados já pré-definidos, s
 
 ##### `1xx` Informação
 ![continue](https://http.cat/100)
+
 O servidor recebeu os cabeçalhos da solicitação, e que o cliente deve proceder para enviar o corpo do pedido
 
 ##### `2xx` Sucesso
 ![accept](https://http.cat/202)
+
 O pedido foi aceito para processamento, mas o tratamento não foi concluído
 
 ##### `3xx` Redirecionamento
 ![multiple](https://http.cat/300)
+
 Indica várias opções para o recurso que o cliente pode acompanhar
 
 ##### `4xx` Erro de cliente
 ![bad](https://http.cat/400)
+
 O pedido não pode ser entregue devido à sintaxe incorreta
 
 ##### `5xx` Erro de servidor
 ![loop](https://http.cat/508)
+
 O servidor detectou um loop infinito ao processar o pedido (enviado em vez de 208)
 
 ## Explique o que é cada parâmetro da função recebida no `createServer`.
@@ -124,6 +129,7 @@ http.createServer(function(req, res){
   rotas.parametros = url.parse(req.url, true);
   try{
 
+    // remove a descrição /api/pokemons
     var rota = req.url.replace(/\/api\/pokemons\//gi, '');
 
     rotas[rota]();
