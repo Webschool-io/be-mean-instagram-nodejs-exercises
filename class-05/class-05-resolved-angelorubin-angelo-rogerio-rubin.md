@@ -300,28 +300,72 @@ Resultado:
 
 # Desafio: Criar um servidor web de arquivos estáticos (CSS, HTML, JS).
 
-## Utilizando o Express.js (npm i express --save)
+app.js
 
 	'use strict';
 
-	const express = require('express');
+	const http = require('http');
+	const fs = require('fs');
+	const path = require('path');
 
-	const app = express();
+	http.createServer((request, response) => {
 
-	app.use(express.static(__dirname + '/public'));
+	    let filePath = '.' + request.url;
 
-	app.listen(process.env.PORT || 3000);
+	    if (filePath == './')
+	        filePath = './index.html';
 
-## Todos os arquivos estáticos (css, js e html) estão na pasta public/ em suas respectivas pastas na raiz da aplicação.
+	    let extname = path.extname(filePath);
 
-### Acessando a pasta css/css.all
+	    switch (extname) {
+	    	case '.css':
+	            contentType = 'text/css';
+	            break;
+	        case '.js':
+	            contentType = 'text/javascript';
+	            break;
+	        case '.html':
+	            contentType = 'text/html';
+	            break;
+	    }
 
-![CSS](http://s26.postimg.org/nfvber21l/css.png)
+	    let contentType = 'text/html';
 
-### Acessando a pasta js/js.all
+	    fs.readFile(filePath, (error, content) => {
+	        if (error) {
+	            if (error.code == 'ENOENT') {
+	                fs.readFile('./404.html', (error, content) => {
+	                    response.writeHead(200, {
+	                        'Content-Type': contentType
+	                    });
+	                    response.end(content, 'utf-8');
+	                });
+	            }
+	        } 
+	        else {
+	            response.writeHead(200, {
+	                'Content-Type': contentType
+	            });
+	            response.end(content, 'utf-8');
+	        }
+	    });
 
-![JS](http://s26.postimg.org/z2au24zyx/image.png)
+	}).listen(3000);
+	console.log('Servidor rodando em http://localhost:3000');
 
-### Acessando a pasta html/index.html e acessando os 3 juntos
 
-![HTML](http://s26.postimg.org/mcb72sheh/html.png)
+### Acessando CSS
+
+![CSS](http://s26.postimg.org/ku7vf6ck9/css_fw.png)
+
+### Acessando JS
+
+![JS](http://s26.postimg.org/l897erwnt/js_fw.png)
+
+### Acessando HTML
+
+![HTML](http://s26.postimg.org/hd5tc7di1/html_fw.png)
+
+### Pagina Não Encontrada.
+
+![404](http://s26.postimg.org/85imsmcrd/404_not_found_fw.png)
