@@ -1,6 +1,6 @@
 # Node.js - Aula 06 - Exercício
 
-**user:** [Pauloxt1](Link para seu Github)
+**user:** [Pauloxt1](https://github.com/Pauloxt1)
 
 **autor:** Paulo Roberto
 
