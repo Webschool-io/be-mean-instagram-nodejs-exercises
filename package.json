@@ -4,7 +4,7 @@
   "description": "",
   "main": ".TDD/index.js",
   "scripts": {
-    "test": "node .TDD/index.js"
+    "test": "jasmine .TDD/index.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/DouglasHennrich/be-mean-instagram-nodejs-exercises/issues"
   },
-  "homepage": "https://github.com/DouglasHennrich/be-mean-instagram-nodejs-exercises#readme"
+  "homepage": "https://github.com/DouglasHennrich/be-mean-instagram-nodejs-exercises#readme",
+  "dependencies": {
+    "jasmine": "^2.4.1"
+  }
 }
