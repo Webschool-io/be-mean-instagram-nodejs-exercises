@@ -1,0 +1,19 @@
+{
+  "name": "be-mean-instagram-nodejs-exercises",
+  "version": "1.0.0",
+  "description": "",
+  "main": ".TDD/index.js",
+  "scripts": {
+    "test": "node .TDD/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DouglasHennrich/be-mean-instagram-nodejs-exercises.git"
+  },
+  "author": "Douglas Hennrich",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DouglasHennrich/be-mean-instagram-nodejs-exercises/issues"
+  },
+  "homepage": "https://github.com/DouglasHennrich/be-mean-instagram-nodejs-exercises#readme"
+}
