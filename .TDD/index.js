@@ -9,8 +9,6 @@ describe("Read File", function() {
 
   //
   function readFiles(dirname, onFileContent, onError) {
-    console.log('dirname: ', dirname);
-
     var files = fs.readdirSync(dirname);
 
     files.forEach(function(filename) {
@@ -19,10 +17,10 @@ describe("Read File", function() {
     });
   }
 
-  it("contains spec with an expectation", function() {
+  it("checando", function() {
 
     readFiles(path.join(__dirname, '../', 'class-02/'), function(filename, content) {
-        data[filename] = content;
+        data[filename] = content.match(/```js[\s\S]+```/gi);
       }, function(error) {
         throw err;
     });
