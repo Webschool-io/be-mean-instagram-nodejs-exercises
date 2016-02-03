@@ -4,7 +4,7 @@
   "description": "",
   "main": ".TDD/index.js",
   "scripts": {
-    "test": "jasmine .TDD/index.js"
+    "pull-test": "jasmine .TDD/index.js"
   },
   "repository": {
     "type": "git",

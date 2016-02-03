@@ -4,4 +4,4 @@ node_js:
   - "5.4.1"
 
 script:
-  - npm test
+  - '[ "${TRAVIS_PULL_REQUEST}" = "true" ] && npm run pull-test'
