@@ -10,19 +10,26 @@ São compostos, por padrão, por 3 digitos. Os Status Codes são divididos em 5 
 
 1XX = Informacional: Serve apenas para informar que a informação foi recebida e que o processo continua.
   Exemplo de código: 100 - Continuar: Apenas sinaliza para o usuário continuar com a requisição.
+  ![](https://http.cat/100)
 
 2XX = Bem Sucedido:
   Exemplo de código: 200 - OK: Significa que a página web existe e que as operações foram realizadas com sucesso.
+  ![](https://http.cat/200)
 
 3XX = Redirecionamento: Notifica ao cabeçalho que houve uma mudança de página...
   Exemplo de código: 302 - Movido Temporariamente: Serve para mover, mas temporariamente.
+  ![](https://http.cat/302)
 
 4XX = Erro do Cliente: Erros 4XX devem ser tratados com cuidado. Pois quando há este tipo de erro no cabeçalho o conteúdo não estará acessivel ao usuário nem para os sistemas de busca para indexação.
   Exemplo de código: 401 - Não autorizado: Quando o usuário não tem acesso à página especifica (usuário não autenticado)
   Exemplo de código: 404 - Não encontrado: Famoso código que é retornado quando uma página ou arquivo especifico não existe no servidor..
+  
+  ![](https://http.cat/401)
+  ![](https://http.cat/404)
 
 5XX = Erro do Servidor: Acontece quando o servidor não consegue processar a requisição por algum motivo... Este erro também não permite a indexação da página.
   Exemplo de código: 503 - Serviço indisponível: É possível ser um erro temporário. Uma manutenção ou uma grande quantidade de requisições realizadas ao servidor que ocasionou em sua queda...
+  ![](https://http.cat/503)
 
 
 ## Explique o que é cada parâmetro da função recebida no `createServer`.
@@ -37,6 +44,7 @@ São os valores passados pela URL. Serve para passarmos valores para nosso GET.
 Exemplo http://localhost:3000?variavel=valor
 
 ## Escreva no código do `server.js` uma forma de entregar um JSON de sucesso em 4 rotas diferentes:
+```javascript
 // server.js
 'use strict';
 
@@ -68,3 +76,4 @@ http.createServer(function(req, res){
 }).listen(3000, function(){
 	console.log('Servidor rodando em localhost:3000');
 });
+```
