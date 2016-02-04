@@ -1,4 +1,3 @@
-```md
 # Node.js - Aula 01 - Exercício
 **user:** pedrohills(Link para seu Github)
 **autor:** Pedro Henrique
@@ -32,4 +31,3 @@ Trabalharemos com tecnologia de ponta que atendeu grandes corporações que rece
 v5.2.0
 ## Qual a versão do seu `npm`?
 3.3.12
-```
