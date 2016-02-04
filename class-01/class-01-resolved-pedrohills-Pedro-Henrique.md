@@ -1,5 +1,5 @@
 # Node.js - Aula 01 - Exercício
-**user:** pedrohills(Link para seu Github)
+**user:** [pedrohills](http://github.com/pedrohills)
 **autor:** Pedro Henrique
 **date:** 1454517126551
 
