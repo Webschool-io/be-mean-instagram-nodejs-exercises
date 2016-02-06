@@ -4,10 +4,10 @@
 
 ## Quais são os 4 verbos que utilizamos para o CRUD?
 
-- Create: criar um registro.
-- Retrieve/Read: Ler/retornar um registro.
-- Update: Atualizar um registro específico.
-- Delete: Excluir um registro específico.
+- POST
+- GET
+- PUT
+- DELETE
 
 ## Para que foram inventados os Status Codes? Dê exemplo de 1 código por grupo e a imagem do [Cat Status Code](https://http.cat).
 
