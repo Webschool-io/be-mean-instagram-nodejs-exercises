@@ -57,8 +57,8 @@ Como foi possível notar, na execução síncrona só foi iniciada a leitura do 
 - Em seguida, a AST é alimentado no gerador de byte code para produzir byte code.
 - O ambiente de execução V8 então interpreta esse byte code e com a ajuda de um compilador JIT (Just-In-Time) produz o código de máquina nativo que é executado.
 
-Na imagem abaixo confira o fluxograma desse funcionamento:
-![Imagem Fluxo v8](img/fluxoV8.jpg)
+Na imagem abaixo confira o fluxograma desse funcionamento:  
+![Imagem Fluxo v8](img/fluxoV8.png)
 
 ##3. Qual a diferença entre um sistema single para um multi-thread?
 
