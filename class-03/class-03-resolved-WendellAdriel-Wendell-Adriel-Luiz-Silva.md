@@ -50,7 +50,7 @@ Dados finalizados:
 // Chamada para API
 'use strict';
 
-const http      = require('http');
+const http = require('http');
 
 http.get({
   hostname : 'pokeapi.co'
@@ -67,12 +67,12 @@ http.get({
 
   res.on('end', () => {
     let json = JSON.parse(data);
-    console.log('<h1>' + json.id + ' - ' + json.name + '</id>');
+    console.log('<h1>' + json.id + ' - ' + json.name + '</h1>');
   });
 });
 
 // RESPOSTA
 STATUS: 200
 HEADERS: {"server":"nginx/1.1.19","date":"Wed, 10 Feb 2016 23:39:43 GMT","content-type":"application/json","transfer-encoding":"chunked","connection":"close","vary":"Cookie","x-frame-options":"SAMEORIGIN","allow":"GET, HEAD, OPTIONS"}
-<h1>212 - scizor</id>
+<h1>212 - scizor</h1>
 ```
