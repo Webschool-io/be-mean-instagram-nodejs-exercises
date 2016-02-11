@@ -5,10 +5,10 @@
 
 ## Quais são os 4 verbos que utilizamos para o CRUD?
 
-- **Create** : para criação de novos objetos
-- **Retrive/Read** : para leitura de objetos
-- **Update** : para atualização de objetos
-- **Delete** : para remoçaão de objetos
+- **POST**
+- **GET**
+- **PUT**
+- **DELETE**
 
 
 ## Para que foram inventados os Status Codes? Dê exemplo de 1 código por grupo e a imagem do [Cat Status Code](https://http.cat/).
