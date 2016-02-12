@@ -428,7 +428,7 @@ fs.rename('teste.txt', 'novo-nome.txt', function (err){
 ```
 node rename-file.js
 Arquivo alterado
-``
+```
 
 ##Desafio: Criar um servidor web de arquivos estáticos: .css, .html, .js e etc...
 
