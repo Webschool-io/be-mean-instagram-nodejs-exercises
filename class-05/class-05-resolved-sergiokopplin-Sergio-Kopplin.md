@@ -321,7 +321,153 @@ npm run pr
 ```
 
 ## Cite 5 globais do Node.js e pelo menos 1 exemplo de cada.
+```JS
+__dirname
+console.log(__dirname);
+
+__filename
+console.log(__filename);
+
+Buffer
+var buff = new Buffer('Hello World!');
+console.log(buff.toString());
+
+setTimeout
+setTimeout(function(){
+    console.log("esse vem com atraso de 1s");
+}, 1000);
+
+setInterval
+setInterval(() => console.log("intervalo de 1s"), 1000);
+```
 
 ## Explique como funciona e de um exemplo de `process`.
+O process é uma instância do EventEmitter, portanto emite eventos.
+
+```JS
+process.on('uncaughtException', (err) => {
+  console.log(`Caught exception: ${err}`);
+});
+```
+---
+
+Aula 05 - Parte 2
+
+## Criar um arquivo
+```JS
+var fs = require('fs');
+
+fs.writeFile('teste.txt', 'Esse é o conteúdo do arquivo', function (err){
+    if(err) throw err;
+    console.log('Arquivo salvo');
+});
+```
+
+```
+$ cat teste.txt
+Esse é o conteúdo do arquivo%
+```
+
+## Ler um arquivo
+```JS
+var fs = require('fs');
+
+fs.readFile('teste.txt', 'utf8' ,function (err, data){
+    if(err) throw err;
+    console.log(data);
+});
+```
+
+```
+node read-file.js
+Esse é o conteúdo do arquivo
+```
+
+## Editar conteúdo desse arquivo
+```JS
+var fs = require('fs');
+
+var texto = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+
+fs.writeFile('teste.txt', texto ,function (err, data){
+    if(err) throw err;
+    console.log('Arquivo alterado!');
+});
+```
+
+```
+node edit-file.js
+Arquivo alterado!
+```
+
+## Deletar arquivo
+```JS
+var fs = require('fs');
+
+fs.unlink('teste.txt', function (err){
+    if(err) throw err;
+    console.log('Arquivo deletado');
+});
+```
+
+```
+node delete-file.js
+Arquivo deletado
+```
+
+## Renomear o arquivo
+```JS
+var fs = require('fs');
+
+fs.rename('teste.txt', 'novo-nome.txt', function (err){
+    if(err) throw err;
+    console.log('Arquivo alterado');
+});
+```
+
+```
+node rename-file.js
+Arquivo alterado
+``
 
 ##Desafio: Criar um servidor web de arquivos estáticos: .css, .html, .js e etc...
+
+```JS
+var http = require('http')
+    , fs = require('fs');
+
+http.createServer(function(request, response){
+    var contentType;
+
+    switch (request.url) {
+
+        case '/index.html':
+            contentType = 'text/html';
+            break;
+
+        case '/style.css':
+            contentType = 'text/css';
+            break;
+
+        case '/server.js':
+            contentType = 'text/javascript';
+            break;
+
+        default:
+            response.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'});
+            response.write('<h1>404 - O arquivo não existe</h1>');
+            break;
+    }
+
+    fs.readFile(request.url.substring(1), 'utf8', function (err, data){
+        if (err) {
+            console.log(err);
+            return false;
+        }
+        response.writeHead(200, { 'Content-Type': contentType });
+        response.end(data);
+    });
+}).listen(3000, function(){
+    console.log('Servidor rodando em localhost:3000');
+});
+```
