@@ -11,11 +11,11 @@ ou códigos a serem executados, o NodeJS aguarda o término do anterior para exe
 ```js
 
 var fs = require( 'fs' );
-
 for (var i = 0; i <= 5; i++) {
   var file = 'sync-txt' + i + '.txt'
     , out = fs.writeFileSync(file, 'Hello Node.js!');
     console.log(out);
+
 }
 ```
 
@@ -72,14 +72,18 @@ As aplicações em NodeJS executam em uma única thread;
 É assíncrono e baseado em eventos;
 Utiliza o modelo de I/O não bloqueante;
 Economia de recursos, financeiros e computacionais;
-É possível trabalhar com uma mesma linguagem base, o JS, o que acaba por criar profissionais fullstack.
+É possível trabalhar com uma mesma linguagem base, o JS, o que acaba por criar profissionais fullstack;
 
 ## Qual a versão do seu NodeJS?
 
+```
 gustavo@gustavo-Inspiron-3442:~$ node -v
 v5.6.0
+```
 
 ## Qual a versão do seu NPM?
 
+```
 gustavo@gustavo-Inspiron-3442:~$ npm --version
 3.6.0
+```
