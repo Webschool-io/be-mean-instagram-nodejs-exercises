@@ -1,6 +1,6 @@
 # Node.js - Aula 02 - Exercício
 **Autor:** Diego Ferreira
-**Data:** Date.now()
+**Data:** 1456489472714
 
 ## Quais são os 4 verbos que utilizamos para o CRUD?
 
