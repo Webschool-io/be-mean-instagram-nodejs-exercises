@@ -75,6 +75,6 @@
 
 ## Explicar a definição de continuação de uma função.
 
-    ```
+    ```js
     Continuation-passing style é quando um dos argumentos de uma função é outra função que trata da continuação dela. Por exemplo, no average acima o argumento callback foi passado para a segunda função e tratada como erro ou resultado.
     ```
