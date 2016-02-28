@@ -52,7 +52,6 @@
 ## Criar uma função que calcula a média de dois valores e imprima essa média uma outra função. como continuação da execução da mesma.
 
     ```js
-
     function average(num1, num2, callback){
         if(typeof arguments[0] == "number" && typeof arguments[1] == "number"){
             var result = (num1 + num2)/2;
