@@ -7,6 +7,7 @@ autor: Wellerson Roberto
 
 - para Number: **max** e **min**
 
+Objeto correto:
 ```
 'use strict';
 
@@ -38,18 +39,12 @@ pokeModel.save(pokeModel, function (err, data) {
 });
 ```
 
-Agora o objeto com validação inválida:
-```
-var pokeModel = new model({
-    name: 'Pikachuz',
-    attack: 101
-});
-```
+Agora os erros de validação...
 
-Dispara o seguinte erro:
+**erro de max e maxlength**
 ```
-{ [ValidationError: pokemon validation failed]
-  message: 'pokemon validation failed',
+{ [ValidationError: Pokemon validation failed]
+  message: 'Pokemon validation failed',
   name: 'ValidationError',
   errors:
    { attack:
@@ -61,15 +56,64 @@ Dispara o seguinte erro:
         path: 'attack',
         value: 101 },
      name:
-      { [ValidatorError: `Pikachuz` is not a valid enum value for path `name`.]
+      { [ValidatorError: Path `name` (`Pikachuzzzzzzz`) is longer than the maximum allowed length (10).]
         properties: [Object],
-        message: '`Pikachuz` is not a valid enum value for path `name`.',
+        message: 'Path `name` (`Pikachuzzzzzzz`) is longer than the maximum allowed length (10).',
+        name: 'ValidatorError',
+        kind: 'maxlength',
+        path: 'name',
+        value: 'Pikachuzzzzzzz' } } }
+undefined
+```
+
+**erro de min e minlength**
+```
+{ [ValidationError: Pokemon validation failed]
+  message: 'Pokemon validation failed',
+  name: 'ValidationError',
+  errors:
+   { attack:
+      { [ValidatorError: Path `attack` (-20) is less than minimum allowed value (0).]
+        properties: [Object],
+        message: 'Path `attack` (-20) is less than minimum allowed value (0).',
+        name: 'ValidatorError',
+        kind: 'min',
+        path: 'attack',
+        value: -20 },
+     name:
+      { [ValidatorError: Path `name` (`c`) is shorter than the minimum allowed length (4).]
+        properties: [Object],
+        message: 'Path `name` (`c`) is shorter than the minimum allowed length (4).',
+        name: 'ValidatorError',
+        kind: 'minlength',
+        path: 'name',
+        value: 'c' } } }
+undefined
+```
+
+**erro de enum**
+```
+{ [ValidationError: Pokemon validation failed]
+  message: 'Pokemon validation failed',
+  name: 'ValidationError',
+  errors:
+   { attack:
+      { [ValidatorError: Path `attack` (-20) is less than minimum allowed value (0).]
+        properties: [Object],
+        message: 'Path `attack` (-20) is less than minimum allowed value (0).',
+        name: 'ValidatorError',
+        kind: 'min',
+        path: 'attack',
+        value: -20 },
+     name:
+      { [ValidatorError: `csdsss` is not a valid enum value for path `name`.]
+        properties: [Object],
+        message: '`csdsss` is not a valid enum value for path `name`.',
         name: 'ValidatorError',
         kind: 'enum',
         path: 'name',
-        value: 'Pikachuz' } } }
+        value: 'csdsss' } } }
 undefined
-
 ```
 
 # 2) Cadastre 3 Pokemons de uma só vez:
