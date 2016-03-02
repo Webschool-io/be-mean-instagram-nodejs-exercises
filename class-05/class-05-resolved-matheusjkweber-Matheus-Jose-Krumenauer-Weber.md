@@ -17,7 +17,7 @@ nvm --version
 ```
 
 ## Inicie um projeto novo para essa aula, com o npm e instale, salvando no package.json:
-    ```
+```
     npm init
 This utility will walk you through creating a package.json file.
 It only covers the most common items, and tries to guess sensible defaults.
@@ -57,52 +57,14 @@ About to write to /home/matheus/Desktop/Desenvolvimento/workshop-be-mean/nodejs/
   "author": "Matheus Jose Krumenauer Weber",
   "license": "ISC"
 }
-
-    ```
-
-Dependência Local
-
-    ```
-    npm install --save mongoose
-    ```
+```
 
 Dependência Local
-
-    ```
+```
     npm install --save mongoose
+```
 
-    pokemon-api@1.0.0 /home/matheus/Desktop/Desenvolvimento/workshop-be-mean/nodejs/class5
-└─┬ mongoose@4.4.5 
-  ├── async@1.5.2 
-  ├── bson@0.4.21 
-  ├── hooks-fixed@1.1.0 
-  ├── kareem@1.0.1 
-  ├─┬ mongodb@2.1.6 
-  │ ├── es6-promise@3.0.2 
-  │ ├─┬ mongodb-core@1.3.1 
-  │ │ └─┬ require_optional@1.0.0 
-  │ │   ├── resolve-from@2.0.0 
-  │ │   └── semver@5.1.0 
-  │ └─┬ readable-stream@1.0.31 
-  │   ├── core-util-is@1.0.2 
-  │   ├── inherits@2.0.1 
-  │   ├── isarray@0.0.1 
-  │   └── string_decoder@0.10.31 
-  ├── mpath@0.2.1 
-  ├── mpromise@0.5.5 
-  ├─┬ mquery@1.7.0 
-  │ ├── bluebird@2.9.26 
-  │ ├── debug@2.2.0 
-  │ └── sliced@0.0.5 
-  ├── ms@0.7.1 
-  ├── muri@1.1.0 
-  ├── regexp-clone@0.0.1 
-  └── sliced@1.0.1 
-
-npm WARN pokemon-api@1.0.0 No repository field.
-
-    ```
-Dependência Local de Desenvolvimento
+Dependência Local
 ```
     npm install --save mongoose
 
@@ -136,7 +98,9 @@ Dependência Local de Desenvolvimento
 
 npm WARN pokemon-api@1.0.0 No repository field.
 
-    ```
+```
+Dependência Local de Desenvolvimento
+```
     npm i --save-dev jasmine
 pokemon-api@1.0.0 /home/matheus/Desktop/Desenvolvimento/workshop-be-mean/nodejs/class5
 └─┬ jasmine@2.4.1 
@@ -148,22 +112,9 @@ pokemon-api@1.0.0 /home/matheus/Desktop/Desenvolvimento/workshop-be-mean/nodejs/
   └── jasmine-core@2.4.1 
 
 npm WARN pokemon-api@1.0.0 No repository field.
-    ```
-
+```
 Dependência Local Opcional
-    ```
-    npm i --save-dev jasmine
-pokemon-api@1.0.0 /home/matheus/Desktop/Desenvolvimento/workshop-be-mean/nodejs/class5
-└─┬ jasmine@2.4.1 
-  ├── exit@0.1.2 
-  ├─┬ glob@3.2.11 
-  │ └─┬ minimatch@0.3.0 
-  │   ├── lru-cache@2.7.3 
-  │   └── sigmund@1.0.1 
-  └── jasmine-core@2.4.1 
-
-npm WARN pokemon-api@1.0.0 No repository field.
-    ```
+```   
     npm i color --save-optional
 pokemon-api@1.0.0 /home/matheus/Desktop/Desenvolvimento/workshop-be-mean/nodejs/class5
 └─┬ color@0.11.1 
@@ -173,7 +124,7 @@ pokemon-api@1.0.0 /home/matheus/Desktop/Desenvolvimento/workshop-be-mean/nodejs/
 
 npm WARN pokemon-api@1.0.0 No repository field.
 matheus@Math:~/Desktop/Desenvolvimento/workshop-be-mean/nodejs/class5$ 
-    ```
+```
 ## Crie e execute um script, via 'npm', que mostre uma mensagem no console com a global, que possui caminho para o diretório atual.
 
 - package.json
