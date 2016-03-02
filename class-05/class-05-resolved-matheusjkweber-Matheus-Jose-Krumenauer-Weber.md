@@ -126,25 +126,25 @@ npm WARN pokemon-api@1.0.0 No repository field.
 matheus@Math:~/Desktop/Desenvolvimento/workshop-be-mean/nodejs/class5$ 
 ```
 ## Crie e execute um script, via 'npm', que mostre uma mensagem no console com a global, que possui caminho para o diretório atual.
-
 - package.json
-    ```js
+```js
     "scripts":{
     "roda": "node script.js"
     },
-    ```
+```
 - scripts.js
-     ```js
+```js
     console.log("Rodei");
-    ```
+```
 - terminal
-    ```
+```
     pokemon-api@1.0.0 roda /home/matheus/Desktop/Desenvolvimento/workshop-be-mean/nodejs/class5
     > node script.js
 
     Rodei
 
-    ```
+```
+
 ## Cite 5 globais do Node.js e pelo menos 1 exemplo de cada.
 ```
 require - inclui um modulo no script.
