@@ -198,3 +198,126 @@ node process.js
 16130048
 16130048
 ```
+##Criar um arquivo
+```js
+/**
+* Sync
+*/
+
+var fs = require('fs');
+
+var wrtie = fs.writeFileSync('./hello.txt', "Hello world!");
+
+/**
+*Async
+*/
+
+fs.writeFile("./hello2.txt", "hello again", function(err, result){
+  if(err) throw err;
+  console.log(result);
+});
+
+var writeStream = fs.createWriteStream('./helloStream.txt', {defaultEnconding:'utf8'});
+
+
+writeStream.write('Hello');
+```
+##Ler um arquivo
+```js
+var fs = require('fs')
+
+fs.readFile('./meusArquivos/helloworld.txt',  'utf8', function(err,data){
+  if(err) throw err;
+  console.log(data);
+});
+
+var dataSync = fs.readFileSync('./meusArquivos/helloworld1.txt', {encoding:'utf8'});
+
+console.log(dataSync);
+```
+
+##Editar conteúdo desse arquivo
+```js
+fs.writeFile("./meusArquivos/helloworld.txt", "hello edited", function(err, result){
+  if(err) throw err;
+  console.log(result);
+});
+```
+
+##Deletar arquivo
+```js
+fs.unlink('./meusArquivos/helloworld.txt', function(err,data){
+  if(err) throw err;
+  console.log("Deletado.");
+});
+```
+
+##Renomear o arquivo
+```js
+var fs = require('fs')
+
+fs.rename('./eufuicriadocomnode/', './eufuirenomeadocomnode', function(err){
+  if(err) throw err;
+});
+```
+
+#Desafio: Criar um servidor web de arquivos estáticos: .css, .html, .js e etc...
+Index.html
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Be MEAN - Instagram</title>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <script src="script.js"></script>
+</head>
+<body>
+  <h1>Be MEAN - Instagram - html </h1>
+</body>
+</html>
+```
+style.css
+```
+
+  h1{
+    color:green;
+  }
+
+```
+script.js
+```
+alert("Funcionou!");
+```
+server.js
+```js
+var http = require('http')
+, fs = require('fs')
+, index=fs.readFileSync('index.html')
+, style = fs.readFileSync('style.css')
+, scripts = fs.readFileSync('script.js');
+
+http.createServer(function(request,response){
+  console.log(request.url);
+  if (request.url == "/" || request.url=="/index.html"){
+    response.writeHead(200,{'Content-Type':'text/html'});
+    response.end(index);
+  }else if(request.url == "/style.css"){
+    response.writeHead(200,{'Content-Type':'text/css'});
+    response.end(style);
+  }else if(request.url == "/script.js"){
+    response.writeHead(200,{'Content-Type':'text/javascript'});
+    response.end(scripts);
+  }else{
+    response.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'});
+        response.write('<h1>404 - O arquivo não existe</h1>');
+  }
+
+  
+}).listen(3000,function(){
+  console.log('Servidor rodando em localhost:3000');
+})
+```
+Resultado:
+
+<img src="https://raw.githubusercontent.com/matheusjkweber/aux/master/Screenshot.from.2016-03-02.21.15.39.png">
