@@ -40,7 +40,7 @@ const http = require('http')
     };
 
 http.createServer((req, res) => {
-    var requests = ['/api/v1', '/api/v2', '/api/v3', '/api/v4'];
+    var requests = ['/api/pokemons/create', '/api/pokemons/read', '/api/pokemons/update', '/api/pokemons/delete'];
 
     if(requests.indexOf(req.url) > -1){
         res.writeHead(200, {'Content-Type': 'application/json'});
