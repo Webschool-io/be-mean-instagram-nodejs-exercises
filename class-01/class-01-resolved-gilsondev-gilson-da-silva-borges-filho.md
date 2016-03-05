@@ -4,7 +4,7 @@
 
 **autor:** Gilson da Silva Borges Filho
 
-**date:** 
+**date:** 1457204302220
 
 ## Explique como um processo síncrono e assíncrono roda no Node.js, dê um exemplo para cada.
 
