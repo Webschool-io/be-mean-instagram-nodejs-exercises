@@ -17,7 +17,7 @@ mongoose.connect(dbUri);
 
 var Schema = mongoose.Schema;
 var pokemonSchema = new Schema({
-    name: {type: String, maxlength: 10, minlength: 4, enum: ['Pikachu', 'Beedril']},
+    name: { type: String, maxlength: 10, minlength: 4, enum: ['Pikachu', 'Beedril', 'Beedril2'], match: /^[a-z]+$/i },
     attack: {type: Number, max: 100, min: 0},
     created: {type: Date, default: Date.now},
     isDead: Boolean,
@@ -115,6 +115,26 @@ undefined
         value: 'csdsss' } } }
 undefined
 ```
+
+**erro de match**
+
+```
+{ [ValidationError: pokemon validation failed]
+  message: 'pokemon validation failed',
+  name: 'ValidationError',
+  errors:
+   { name:
+      { [ValidatorError: Path `name` is invalid (Beedril2).]
+        properties: [Object],
+        message: 'Path `name` is invalid (Beedril2).',
+        name: 'ValidatorError',
+        kind: 'regexp',
+        path: 'name',
+        value: 'Beedril2' } } }
+undefined
+```
+
+
 
 # 2) Cadastre 3 Pokemons de uma só vez:
 
