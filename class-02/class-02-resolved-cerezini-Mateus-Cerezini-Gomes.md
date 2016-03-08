@@ -11,21 +11,26 @@
 
 ## Para que foram inventados os Status Codes? Dê exemplo de 1 código por grupo e a imagem do [Cat Status Code](https://http.cat/).
 
-Foram inventados para informar sobre o processamento (sucesso, erros, informações) da requisição através do header da resposta.
+Os status codes informam sobre o processamento (sucesso, erros, informações) da requisição através do *header* da resposta.
 
-**1XX - Informação**
+### 1XX - Informação
+
 ![alt text](https://http.cat/100 "100")
 
-**2XX - Sucesso**
+### 2XX - Sucesso
+
 ![alt text](https://http.cat/202 "202")
 
-**3XX - Redirecionamento**
+### 3XX - Redirecionamento
+
 ![alt text](https://http.cat/304 "304")
 
-**4XX - Erro no Cliente**
+### 4XX - Erro no Cliente
+
 ![alt text](https://http.cat/413 "413")
 
-**5XX - Erro no Servidor**
+### 5XX - Erro no Servidor
+
 ![alt text](https://http.cat/599 "599")
 
 ## Explique o que é cada parâmetro da função recebida no `createServer`.
@@ -43,8 +48,6 @@ Ex: Gostaria de receber todos os carros feitos em 2008 da cor azul, logo a *quer
 - /api/pokemons/read
 - /api/pokemons/update
 - /api/pokemons/delete
-
-**DICA: NÃO USE IF!!!**
 
 ```js
 // server.js
