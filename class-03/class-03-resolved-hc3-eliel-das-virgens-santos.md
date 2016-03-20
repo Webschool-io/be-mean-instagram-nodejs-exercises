@@ -1,5 +1,5 @@
 # Node.js - Aula 03 - Exercício
-**user:** [hc](https://github.com/hc3)
+**user:** [hc3](https://github.com/hc3)
 **autor:** Eliel das Virgens
 **date:** 20/03/2015
 
