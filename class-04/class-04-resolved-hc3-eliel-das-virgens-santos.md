@@ -3,7 +3,7 @@ user:hc3
 autor:Eliel das Virgens Santos
 Data:17/03/2016
 
-#01.Criar uma função com uma entrada para nome e imprimir esta entrada em uma outra função, como continuação da mesma.
+##01.Criar uma função com uma entrada para nome e imprimir esta entrada em uma outra função, como continuação da mesma.
 ```
 function criaNome(nome,callback){
     if (typeof nome === 'string') {
@@ -20,7 +20,7 @@ criaNome('Eliel', function(err, result){
 });
 ```
 
-#02.Criar uma função que calcula a soma de dois valores e passe o resultado em uma outra função e imprima-o, de acordo com o padrão apresentado em aula.
+##02.Criar uma função que calcula a soma de dois valores e passe o resultado em uma outra função e imprima-o, de acordo com o padrão apresentado em aula.
 ```
 function soma(a, b, callback){
     if (typeof a === 'number' && typeof b === 'number'){
@@ -38,7 +38,7 @@ soma(20,50,function(err,result){
 });
 ```
 
-#03.Criar uma que calcular a média de dois valores e imprima essa média em uma outra função, como continuação da execução da mesma.
+##03.Criar uma que calcular a média de dois valores e imprima essa média em uma outra função, como continuação da execução da mesma.
 ```
 function calcularMedia(a, b, callback){
     if (typeof a === 'number' && typeof b === 'number'){
@@ -56,5 +56,5 @@ calcularMedia(20,30,function(err,result){
 });
 ```
 
-#04.Explicar a definição de continuação de uma função.
--A continuação de uma função, também chamado de callback é o ato de passar uma função como parâmetro de outra, isso acontecer porque as funções javascript são high order functions ou seja se juntarmos isso as closures temos os callbacks vão seguir um padrão com o erro no primeiro parâmetro e o resultado no segundo.
+##04.Explicar a definição de continuação de uma função.
+-A continuação de uma função, também chamado de callback é o ato de passar uma função como parâmetro de outra, isso acontecer porque as funções javascript são high order functions, e com isso podem ser atribuidas a variáveis ou passadas como parâmetro de outras funções ou seja se juntarmos isso as closures temos os callbacks vão seguir um padrão com o erro no primeiro parâmetro e o resultado no segundo.
