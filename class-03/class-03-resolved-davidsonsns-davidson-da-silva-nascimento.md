@@ -1,5 +1,6 @@
 # Node.js - Aula 02 - Exercício
 **user:** [davidsonsns](https://github.com/davidsonsns)
+
 **autor:** Davidson da Silva Nascimento
 
 ### Por que quando requisitamos ao nosso servidor de *Query String*, **com o Chrome**, ele executa 2 requisições, sendo a última "*vazia*"?
