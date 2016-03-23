@@ -1,4 +1,4 @@
-# Node.js - Aula 02 - Exercício
+# Node.js - Aula 03 - Exercício
 **user:** [davidsonsns](https://github.com/davidsonsns)
 
 **autor:** Davidson da Silva Nascimento
