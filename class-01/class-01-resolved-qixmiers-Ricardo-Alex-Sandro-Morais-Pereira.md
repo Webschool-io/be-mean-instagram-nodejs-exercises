@@ -7,19 +7,19 @@ Síncrono: O processo síncrono bloquea o node de executar qualquer outro codigo
 Assíncrono: Executa todo o codigo parelamente as chamadas de I/O, nao-bloqueantes.
 Exemplo Síncrono:
 ```
-    var fs = require('fs');
-    for(var i = 0; i < 10; i++){
-        fs.readFileSync('./mean.txt', 'utf8', callback);
-    }
+var fs = require('fs');
+for(var i = 0; i < 10; i++){
+    fs.readFileSync('./mean.txt', 'utf8', callback);
+}
 ```
 Exemplo Assíncrono:
 ```
-    var fs = require('fs');
-    for(var i = 0; i < 10; i++){
-        fs.readFileSync('./mean.txt', (err, data) => {
-            console.log(data);
-        });
-    }
+var fs = require('fs');
+for(var i = 0; i < 10; i++){
+    fs.readFileSync('./mean.txt', (err, data) => {
+        console.log(data);
+    });
+}
 ```
     
 ## Como o V8 executa Javascript? Demonstre 1 exemplo com o código ou imagem.
