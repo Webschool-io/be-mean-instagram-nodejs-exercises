@@ -39,6 +39,7 @@ QueryString em World Wide Web (WWW) é um padrão utilizado para transportar val
 Elas são um conjuntos de pares/valores anexados a URL.
 
 ##5. Escreva no código do 'server.js' uma forma de entregar um JSON de sucesso em 4 rotas diferentes.
+```
 'use strict';
 
 const http = require('http')
@@ -73,3 +74,4 @@ http.createServer((req, res) => {
 }).listen(3000, () => {
     console.log('Server start in port 3000');
 });
+```
