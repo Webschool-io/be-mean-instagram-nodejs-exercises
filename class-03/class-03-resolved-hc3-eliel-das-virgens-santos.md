@@ -4,7 +4,8 @@
 **date:** 20/03/2015
 
 ##01.Porque quando requisitamos ao nosso servidor de Query String com o chrome ele executa 2 requisições sendo a última vazia?
--
+-no Chrome são feitas duas requisições a outra é pelo favicon.
+
 
 ##02.Qual a diferença entre o get e o post?
 -O get requisita algo ao servidor por exemplo podemos fazer uma busca de uma imagem ao servidor
