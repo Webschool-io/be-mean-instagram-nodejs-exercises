@@ -587,193 +587,225 @@ module.exports = Field;
    - findOneAndUpdate
    - findOneAndRemove
 
+**Schema e model utilizados**
+```JS
+'use strict';
+
+const mongoose = require('mongoose');
+const db = 'mongodb://localhost/be-mean-instagram';
+
+mongoose.connect( db );
+
+const Schema = mongoose.Schema;
+const _schema = {
+  name: { type: String, required: true, match: /^./i },
+  description: { type: String, required: true, match: /^./i},
+  type: { type: String, required: true, match: /^./i},
+  attack: { type: Number, min: 1}
+};
+
+const PokemonSchema = new Schema(_schema);
+
+const Model = mongoose.model('pokemons', PokemonSchema);
+```
+
 **findAndModify**
-
-#1 - Buscando pelo nome e incrementando o attack.#
 ```JS
-var mongooClient = require('mongodb').MongoClient
-  , format = require('util').format;
+'use strict';
 
-mongooClient.connect('mongodb://localhost/be-mean-instagram', function(err, db) {
-   if(err) throw err;
+const mongoose = require( 'mongoose' );
+const db = 'mongodb://localhost/be-mean-instagram';
 
-   db.collection('pokemons').findAndModify(
-     { name: /pokemon 3/i },
-     [['_id','asc']],
-     { $inc: { attack: 5 } },
-     {},
-     function(err, object) {
-         if (err){
-             console.warn(err.message);
-         }else{
-             console.dir(object);
-         }
-     });
+mongoose.connect( db );
+
+const Schema = mongoose.Schema;
+
+const _schema = {
+  name: {type: String, match: /^./i},
+  description: {type: String, match: /^./i},
+  type: {type: String, match: /^./i},
+  attack: {type: Number, min: 1}
+};
+
+const PokemonSchema = new Schema(_schema);
+
+PokemonSchema.statics.findAndModify = function (query, sort, doc, options, callback) {
+  return this.collection.findAndModify(query, sort, doc, options, callback);
+};
+
+const Model = mongoose.model('pokemons', PokemonSchema);
+
+const query  = { attack: {$lte: 5 } };
+const mod = { type: 'eletric' };
+const options = { multi: true };
+
+Model.findAndModify(query, [], mod, options, function (err, data) {
+  if (err) return console.log('Erro: ', err);
+  return console.log('Alterou: ', data);
 });
 ```
 
 ```
-{ value:
-   { _id: ObjectID { _bsontype: 'ObjectID', id: 'V©SXáwp\u0003*\u001b]' },
+Resultado:
+
+$ node findAndModify.js
+Alterou:  { lastErrorObject: { updatedExisting: true, n: 1 },
+  value:
+   { _id: 56aeb9d04bb106b114749436,
      name: 'Pokemon 3',
-     attack: 32,
-     hasCreditCookie: true,
-     tags: [],
-     created_at: Wed Jan 27 2016 21:32:16 GMT-0200 (Horário brasileiro de verão),
+     description: 'pokemon 3',
+     type: 'eletric',
+     attack: 51     
      __v: 0 },
-  lastErrorObject: { updatedExisting: true, n: 1 },
-  ok: 1 }   
-```
-
-#2 - Buscando pelo attack e alterando o nome.#
-```JS
-var mongooClient = require('mongodb').MongoClient
-  , format = require('util').format;
-
-mongooClient.connect('mongodb://localhost/be-mean-instagram', function(err, db) {
-   if(err) throw err;
-
-   db.collection('pokemons').findAndModify(
-     { attack: 25 },
-     [['_id','asc']],
-     { name: "MidicandoMon" },
-     {},
-     function(err, object) {
-         if (err){
-             console.warn(err.message);
-         }else{
-             console.dir(object);
-         }
-     });
-});
-```
-
-```
-{ value:
-   { _id: ObjectID { _bsontype: 'ObjectID', id: 'V©S\u0018kS×' },
-     name: 'Pokemon 3',
-     attack: 25,
-     hasCreditCookie: true,
-     tags: [],
-     created_at: Wed Jan 27 2016 21:32:43 GMT-0200 (Horário brasileiro de verão),
-     __v: 0 },
-  lastErrorObject: { updatedExisting: true, n: 1 },
-  ok: 1 }
-```
-
-#3 - Buscando pelo attack e alterando o hasCreditCookie.#
-```JS
-var mongooClient = require('mongodb').MongoClient
-  , format = require('util').format;
-
-mongooClient.connect('mongodb://localhost/be-mean-instagram', function(err, db) {
-   if(err) throw err;
-
-   db.collection('pokemons').findAndModify(
-     { attack: 37 },
-     [['_id','asc']],
-     { hasCreditCookie : false },
-     {},
-     function(err, object) {
-         if (err){
-             console.warn(err.message);
-         }else{
-             console.dir(object);
-         }
-     });
-});
-```
-
-```
-{ value:
-   { _id: ObjectID { _bsontype: 'ObjectID', id: 'V©SXáwp\u0003*\u001b]' },
-     name: 'Pokemon 3',
-     attack: 37,
-     hasCreditCookie: true,
-     tags: [],
-     created_at: Wed Jan 27 2016 21:32:16 GMT-0200 (Horário brasileiro de verão),
-     __v: 0 },
-  lastErrorObject: { updatedExisting: true, n: 1 },
   ok: 1 }
 ```
 
 **findOneAndUpdate**
 
+*Exemplo 1*
+```JS
+use 'strict';
+
+const query = { name: /pokemon/i};
+const mod = { type: 'grass' };
+
+Model.findOneAndUpdate(query, mod, {}, function (err, data) {
+  if (err) return console.log('Erro: ', err);
+  return console.log('Alterou: ', data);
+})
+```
+```
+Resultado:
+
+Alterou:  { __v: 0,
+  attack: 105,
+  type: 'teste',
+  description: 'pokemon 3',
+  name: 'Pokemon 3',
+  _id: 56aeb9d04bb106b114749436 }
+```
+
+*Exemplo 2*
+
 ```JS
 'use strict';
 
-const Pokemon = require( './pokemon-models' );
+const query = { attack: {$lte: 10}};
+const mod = {attack: 56};
+const options = {multi: true};
 
-/* primeira alteracao
-const query = {name: /pokemon 1/i};
-const mod = {attack: 666};
-*/
-
-/* segunda alteracao
-const query = {name: /pokemon 2/i};
-const mod = {name: "DilmaMon"};
-*/
-
-/* terceira alteacao*/
-const query = {attack: 666};
-const mod = {name: "BeMon"};
-
-Pokemon.findOneAndUpdate(query, mod, {upsert: true}, function (err, data) {
-  if (err) return console.log('ERRO: ', err);
-  return console.log('Alterou:', data);
-})
+Model.findOneAndUpdate(query, mod, options, function (err, data) {
+  if (err) return console.log('Erro: ', err);
+  return console.log('Alterou: ', data);
+});
 ```
 
 ```
-Alterou: { update_at: Sun Feb 28 2016 18:19:54 GMT-0300 (Hora oficial do Brasil),
-  __v: 0,
-  created_at: Wed Jan 27 2016 21:32:43 GMT-0200 (Horário brasileiro de verão),
-  tags: [],
-  hasCreditCookie: true,
-  attack: 23,
-  name: 'Pokemon 1',
+Resultado:
+
+Alterou:  { active: false,
+  attack: 9,
+  type: 'fire',
+  description: 'dronzitoo',
+  name: 'Charmander',
   _id: 56a9539b4b828d9c186b53d5 }
+```
 
-Alterou: { update_at: Sun Feb 28 2016 18:23:34 GMT-0300 (Hora oficial do Brasil),
-    __v: 0,
-    created_at: Wed Jan 27 2016 21:32:16 GMT-0200 (Horário brasileiro de verão),
-    tags: [],
-    hasCreditCookie: true,
-    attack: 24,
-    name: 'Pokemon 2',
-    _id: 56a9538058e17770032a1b5c }
+*Exemplo 3*
+```JS
+'use strict';
 
-Alterou: { update_at: Sun Feb 28 2016 18:26:09 GMT-0300 (Hora oficial do Brasil),
-    __v: 0,
-    created_at: Wed Jan 27 2016 21:32:43 GMT-0200 (Horário brasileiro de verão),
-    tags: [],
-    hasCreditCookie: true,
-    attack: 666,
-    name: 'Pokemon 1',
-    _id: 56a9539b4b828d9c186b53d5 }    
+const query = {$and: [{type: 'fire'}, {attack: {$gte: 5}}]};
+const mod = {attack: 51, description: 'update attack'};
+const options = {multi: true};
+
+Model.findOneAndUpdate(query, mod, options, function (err, data) {
+  if (err) return console.log('Erro: ', err);
+  return console.log('Alterou: ', data);
+});
+```
+
+```
+Resultado:
+
+Alterou:  { __v: 0,
+  defense: 888,
+  attack: 56,
+  type: 'fire',
+  description: 'update attack',
+  name: 'Charmander',
+  _id: 56a9539b4b828d9c186b53d5 }
 ```
 
 **findOneAndRemove**
+
+*Exemplo 1*
+
 ```JS
 'use strict';
 
-const Pokemon = require( './pokemon-models' );
+const query = { $and: [{type: 'grass'}, {attack: {$gte: 100}}]};
 
-/* removendo pelo _id
-const query = { _id: "56a9539b4b828d9c186b53d5"};
-*/
+Model.findOneAndRemove(query, function (err, data) {
+  if (err) return console.log('Erro: ', err);
+  return console.log('Removeu: ', data);
+});
+```
+```
+Resultado:
 
-/* removendo pelo name
-const query = { name: /pokemon 2/i};
-*/
+Removeu:  { __v: 0,
+  attack: 105,
+  type: 'grass',
+  description: 'pokemon 3',
+  name: 'Pokemon 3',
+  _id: 56aeb9d04bb106b114749436 }
+```
 
-/* removendo pelo attack */
-const query = { attack: 23 };
+*Exemplo 2*
 
-Pokemon.findOneAndRemove(query, {remove: true}, function (err, data) {
-  if (err) return console.log('ERRO: ', err);
-  return console.log('Removeu');
-})
+```JS
+'use strict';
+
+const query = { attack: null };
+
+Model.findOneAndRemove(query, function (err, data) {
+  if (err) return console.log('Erro: ', err);
+  return console.log('Removeu: ', data);
+});
+```
+```
+Resultado:
+
+Removeu:  { description: 'Fracomon',
+  defense: null,
+  attack: null,
+  name: 'fracote',
+  _id: 564de099fc7e5880d64a877e }
+```
+
+*Exemplo 3*
+
+```JS
+'use strict';
+
+const query = {attack: {$lte: 10}};
+
+Model.findOneAndRemove(query, function (err, data) {
+  if (err) return console.log('Erro: ', err);
+  return console.log('Removeu: ', data);
+});
+```
+
+```
+Resultado:
+
+Removeu:  { active: false,
+  attack: 56,
+  type: 'fire',
+  description: 'update attack',
+  name: 'Charmander',
+  _id: 56a9539b4b828d9c186b53d5 }
 ```
 
 4. Crie 1 Schema com todo CRUD funcional e métodos especiais, que agrupe:
