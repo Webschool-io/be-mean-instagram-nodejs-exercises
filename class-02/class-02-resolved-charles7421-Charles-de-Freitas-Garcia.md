@@ -51,7 +51,7 @@
 
 ## Escreva no código do `server.js` uma forma de entregar um JSON de sucesso em 4 rotas diferentes:
 
-
+```js
 'use strict';
 
 var date = (new Date()).toJSON();
