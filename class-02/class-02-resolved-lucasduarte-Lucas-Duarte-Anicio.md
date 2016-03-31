@@ -3,18 +3,10 @@
 **autor:** Lucas Duarte Anício
 
 ## Quais são os 4 verbos que utilizamos para o CRUD?
-
-**GET**
-	- Requisita uma representação do recurso especificado.
-
-**POST**
-	- Envia uma entidade e requisita que o servidor aceite-a como subordinada do recurso identificado pela URI
-
-**PUT**
-Requsita que uma entidade já existente seja armazenada embaixo da URI fornecida. Se a URI não aponta para um recurso existente o servidor pode criar um recurso com essa URI
-
-**DELETE**
- - Remove o recurso especificado
+- Create
+- Read
+- Update
+- Delete
 
 ## Para que foram inventados os Status Codes? Dê exemplo de 1 código por grupo e a imagem do [Cat Status Code](https://http.cat/).
 
