@@ -291,6 +291,7 @@ PokemonModel.find(query, function (err, data) {
   return console.log('Buscou:', data);
 })
 Buscou: []
+
 ```
 
 ## Altere, **inserindo**, o Pokemon `Nerdmon` com `attack` igual a 49 e com os valores dos outros campos a sua escolha.
