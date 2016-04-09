@@ -272,11 +272,10 @@ PokemonModel.create(array, function (err, data) {
 })
 
 module.exports = PokemonModel;
-
 ```
 
 ## Busque **todos** os Pokemons com `attack > 50` e `height > 0.5`:
-
+```javascript
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const _schema = {
@@ -292,6 +291,7 @@ PokemonModel.find(query, function (err, data) {
   return console.log('Buscou:', data);
 })
 Buscou: []
+```
 
 ## Altere, **inserindo**, o Pokemon `Nerdmon` com `attack` igual a 49 e com os valores dos outros campos a sua escolha.
 ```javascript
