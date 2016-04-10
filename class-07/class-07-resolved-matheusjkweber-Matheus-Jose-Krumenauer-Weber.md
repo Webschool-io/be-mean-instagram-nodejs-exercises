@@ -50,7 +50,7 @@ const Foo = require('./exercicio_aula7_1.js');
 const foo = new Foo({ msg : 'Message passed!'});
 
 foo.init();
-```
+
 matheus@Math:~/Desktop/Desenvolvimento/workshop-be-mean/nodejs/class6$ node exercicio_aula7_1_2.js 
 Is working! Msg: Message passed!
 
