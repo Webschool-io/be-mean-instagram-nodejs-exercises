@@ -21,7 +21,7 @@ Para padronizar o retorno do servidor.
 
 ![](https://http.cat/301)
 
-4xx - Bad Request
+4xx - Client Error
 
 ![](https://http.cat/415)
 
