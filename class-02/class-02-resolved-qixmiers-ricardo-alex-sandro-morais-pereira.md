@@ -40,6 +40,7 @@ Elas são um conjuntos de pares/valores anexados a URL.
 
 ##5. Escreva no código do 'server.js' uma forma de entregar um JSON de sucesso em 4 rotas diferentes.
 ```
+'use strict';
 const http = require('http')
     , SUCCESS = {
         name: '<h1>Be MEAN</h1>',
