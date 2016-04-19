@@ -16,7 +16,7 @@ Exemplo Assíncrono:
 ```
 var fs = require('fs');
 for(var i = 0; i < 10; i++){
-    fs.readFileSync('./mean.txt', (err, data) => {
+    fs.readFile('./mean.txt', (err, data) => {
         console.log(data);
     });
 }
