@@ -39,6 +39,7 @@ sum(1, 2, function(error, result) {
 
 ## Criar uma função que calcula a média de dois valores e imprima essa média em outra função, como continuação da execução da mesma
 
+```
 function media(num1, num2, callback) {
   if (typeof num1 === 'number' && typeof num2 === 'number') {
     var result = num1 + num2 / 2;
@@ -52,6 +53,7 @@ media(1, 2, function(error, result) {
   if (error) console.log(error);
   else console.log(result);
 });
+```
 
 ## Explicar a definição de continuação de uma função
 
