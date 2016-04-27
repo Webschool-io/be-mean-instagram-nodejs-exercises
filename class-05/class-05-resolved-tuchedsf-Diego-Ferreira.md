@@ -6,11 +6,13 @@
 
 
 ## 1- Instale algum gerenciador de versão do Node.js e instale a versão mais atual como padrão, enquanto escrevo é a versão 5.4.0
-O gerenciador escolhido foi o npm que foi utilizado nas aulas.
+Já o gerenciador de versão foi o nvm.
+
 
 ```
-npm --version
-3.5.3
+diego@MacBook-Air-Diego ~> curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash
+diego@MacBook-Air-Diego:~ diego$ nvm --version
+0.31.0
 node --version
 v5.4.1
 ```
@@ -322,3 +324,4 @@ https://nodejs.org/dist/latest-v4.x/docs/api/console.html
 https://nodejs.org/dist/latest-v4.x/docs/api/buffer.html
 https://nodejs.org/dist/latest-v4.x/docs/api/modules.html#modules_modules
 https://nodejs.org/dist/latest-v4.x/docs/api/process.html#process_process
+https://github.com/creationix/nvm
