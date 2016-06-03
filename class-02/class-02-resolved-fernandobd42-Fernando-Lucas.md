@@ -1,7 +1,7 @@
 # Node.js - Aula 02 - Exercício
 **user:** [fernandobd42](https://github.com/fernandobd42)
 **autor:** Fernando Lucas
-**date:** 1464895201350
+**date:** 1464986562481
 
 * /api/pokemons/create
 * /api/pokemons/read
@@ -12,7 +12,6 @@
 
 ## Estrutura
 
-```md
 ## Quais são os 4 verbos que utilizamos para o CRUD?
 CRUD - (Create, Retrive/Read, Update, Delete)
 
