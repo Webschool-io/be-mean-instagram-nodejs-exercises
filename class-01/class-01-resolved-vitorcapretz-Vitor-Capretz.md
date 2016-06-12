@@ -40,23 +40,26 @@ Quanto ao sistema multi-thread, ele funciona dividindo as tarefas no processamen
 Exemplo: 
 
 * Single Thread (todas as tarefas no mesmo processador)
-    Tarefa 1
-    Tarefa 2
-    Tarefa 3
-    Tarefa 4
-    Tarefa 5
-    Tarefa 6
+```
+Tarefa 1
+Tarefa 2
+Tarefa 3
+Tarefa 4
+Tarefa 5
+Tarefa 6
+```
 
 * Multi Thread (tarefas divididas no processador)
-    Tarefa 1
-    Tarefa 2
-    
-    Tarefa 3
-    Tarefa 4
-    
-    Tarefa 5
-    Tarefa 6
-    
+``` 
+Tarefa 1
+Tarefa 2
+
+Tarefa 3
+Tarefa 4
+  
+Tarefa 5
+Tarefa 6
+```    
 ## 4. Como a Thread Pool tem um tamanho padrão de 4, o que acontece se você enviar 5 requisições ao banco?
 
 No caso da requisição 5 e possíveis requisições subsequentes, estas ficariam na fila de Tasks (`Task Queue`) até que uma das outras tarefas em execução seja finalizada, liberando outro espaço na Thread Pool.
