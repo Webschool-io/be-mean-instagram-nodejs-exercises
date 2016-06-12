@@ -81,7 +81,7 @@ vitor@vitor-ThinkPad-T440:~$ node -v
 v6.2.0
 ```
 
-## Qual a versão do seu `npm`?
+## 7. Qual a versão do seu `npm`?
 
 ```
 vitor@vitor-ThinkPad-T440:~$ npm -v
