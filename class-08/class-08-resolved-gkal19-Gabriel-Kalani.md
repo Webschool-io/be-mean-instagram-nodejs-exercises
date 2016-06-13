@@ -4,6 +4,8 @@
 
 **Autor:** Gabriel Kalani
 
+**Data** 1465801860
+
 #### 1 - Insira 5 pokemons novos, na coleção pokemons, escolha 3 e os adicione em um array e uma nova coleção chamada meus-pokemons, utilizando o ObjectId. Adicione o required em campos que ache obrigatório no Schema do Pokemon.
 ```js
 'use strict';  
