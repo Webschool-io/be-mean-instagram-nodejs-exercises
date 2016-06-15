@@ -298,7 +298,7 @@ Fetched 3 record(s) in 3ms
 
 ```
 
-## Busque **todos** os Pokemons com `attack > 90` e `speed > 70`:
+## Busque **todos** os Pokemons com `attack > 180` e `speed > 70`:
 
 ### Teste no console do MongoDB
 
