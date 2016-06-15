@@ -176,6 +176,21 @@ Contatos.create(dados, (err, data) => {
 
 ```
 
+### Retorno do script acima
+
+```js
+
+Salvou:  { _id: 5760ded5dcce1fd533e829bb,
+  email: 'fulano_da_silva@gmail.com',
+  foto: 'imagem.jpg',
+  telefone: '4799999999',
+  operadora: 'vivo',
+  idade: 77,
+  nome: 'Fulano da Silva',
+  __v: 0 }
+
+```
+
 ## Cadastre 3 pokemons **de uma só vez**:
 
 ```js
