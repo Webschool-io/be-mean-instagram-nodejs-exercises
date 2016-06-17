@@ -39,6 +39,8 @@ exemploAssicrono2();
 ## Como o V8 executa JavaScript? Demonstre 1 exemplo com código ou imagem.
 O V8 é o motor de renderização do javaScript que funcioná como uma máquina virtual que compila o código em js para o formato nativo de máquina antes de executá-lo, tendo como propósito aumentar o desempenho da aplicação.
 
+(http://image.slidesharecdn.com/15fuv8js7ulf1nzuakfe-140628073041-phpapp01/95/nodejs-enterprise-middleware-25-638.jpg?cb=1403940779)
+
 ## Qual a diferença entre um sistema single para um multi-thread?
 Tem mais arquiteturas além de single-thread (ST) e multi-thread (MT). Basicamente o ST só pode tratar uma requisição de cada vez, então o processamento de cada uma não pode ser demorado, nem pode bloquear (por exemplo, ficar esperando pelo banco de dados). O MT, assumindo que se crie uma thread por requisição, pode tratar várias requisições em paralelo, mesmo que demorem ou bloqueiem.
 
