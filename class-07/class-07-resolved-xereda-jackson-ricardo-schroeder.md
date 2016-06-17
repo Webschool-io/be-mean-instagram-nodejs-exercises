@@ -4,7 +4,7 @@
 
 **autor**: Jackson Ricardo Schroeder
 
-**date**: 1458942620128
+**date**: 1466134880357
 
 # Crie um função que entenda de EventEmitter. Nela crie um method chamado init. Ele devera ser chamado toda vez que a sua função for iniciada. Use o código 04 como base.(use ele no prototype).
 
@@ -181,7 +181,7 @@ module.exports = exports = pokemonHadler();
 
 ```
 
-# app-promise-find.js
+## app-promise-find.js
 
 ```js
 
