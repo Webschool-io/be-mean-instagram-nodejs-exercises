@@ -1,7 +1,7 @@
 # Node.js - Aula 01 - Exercício
 **user:** [falconeric](https://github.com/falconeric)
 **autor:** Eric Lessa
-**Data:**
+**Data:** 1466310895
 
 ## Quais são os 4 verbos que utilizamos para o CRUD?
 Para o CRUD utilizamos seguintes verbos http: Post (**C**reate), Get (**R**etrieve), Put (**U**pdate) e Delete (**D**elete).
