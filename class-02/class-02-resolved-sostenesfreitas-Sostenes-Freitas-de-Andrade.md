@@ -43,7 +43,8 @@ Serve para informar o que o servidor esta respondendo. [Definiçãoes](https://w
 Querystring é uma forma de passar os valores pela url, assim podemos pegar os valores da nossa url com nosso request.
 
 ## Escreva no código do `server.js` uma forma de entregar um JSON de sucesso em 4 rotas diferentes:
-e strict';
+```
+ strict';
 var request = require("request");
 var READ;
 request("https://raw.githubusercontent.com/sostenesfreitas/phpApi/master/pokemon.json", function(error, response, body) {
@@ -107,3 +108,4 @@ http.createServer(function(req, res){
     
 	});
 
+```
