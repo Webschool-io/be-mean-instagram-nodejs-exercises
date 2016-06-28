@@ -1,10 +1,10 @@
 # Node.js - Aula 01 - Exercício
 **user:** [fernandobd42](https://github.com/fernandobd42)
 **autor:** Fernando Lucas
-**date:** new Date()
+**date:** 1464891153095
 
 ## Explique como um processo síncrono e assíncrono roda no Node.js, dê um exemplo para cada.
-Processo assíncrono é quando é executado apenas um processo por vez, onde o Node ficará limitado aquele processo ate que o mesmo termina, para só aṕos finalizar a execução daquele determinado processo, poder iniciar a execução novo processo.
+Processo síncrono é quando é executado apenas um processo por vez, onde o Node ficará limitado aquele processo até que o mesmo termine, e só aṕos finalizar a execução daquele determinado processo, poder iniciar a execução de um novo processo.
 EX:
 ```
 function test(){
@@ -17,8 +17,7 @@ test();
 test2();
 ```
 
-Já o processo assíncrono que é utilizado pelo Node por padrão, é capaz de executar vários processos de uma só vez, em 'paralelo'
-mas o que acontece na verdade não é que ele executa varios processos simultaneos, ele simplesmente manda executar o processo com um callback e já vai para o próximo processo, quando qualquer um dos processos que já foi mandado executar terminar seu processo ele manda o callback de retorno para o Node finalizar aquele processo. 
+Já o processo assíncrono que é utilizado pelo Node por padrão, é capaz de executar vários processos de uma vez só, em 'paralelo' mas o que acontece na verdade não é que ele executa varios processos simultaneos, ele simplesmente manda executar o processo com um callback e já vai para o próximo processo, quando qualquer um dos processos que já foi mandado executar terminar seu processo ele manda o callback de retorno para o Node finalizar aquele processo.
 EX:
 ```
 function test(){
@@ -52,5 +51,3 @@ v6.0.0
 ## Qual a versão do seu `npm`?
 ➜  NODE_JS git:(master) ✗ npm -v
 3.8.6
-
-
