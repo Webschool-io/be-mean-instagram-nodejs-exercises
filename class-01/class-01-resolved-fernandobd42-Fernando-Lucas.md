@@ -1,7 +1,7 @@
 # Node.js - Aula 01 - Exercício
 **user:** [fernandobd42](https://github.com/fernandobd42)
 **autor:** Fernando Lucas
-**date:** new Date()
+**date:** 1467347548312
 
 ## Explique como um processo síncrono e assíncrono roda no Node.js, dê um exemplo para cada.
 Processo assíncrono é quando é executado apenas um processo por vez, onde o Node ficará limitado aquele processo ate que o mesmo termina, para só aṕos finalizar a execução daquele determinado processo, poder iniciar a execução novo processo.
