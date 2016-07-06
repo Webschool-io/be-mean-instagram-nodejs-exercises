@@ -5,31 +5,35 @@
 
 ## Índice
 
+##### [Exercício 01](#1---criar-um-módulo-de-redirecionamento-para-quando-não-encontrar-a-rota-redirecionar-para-url404)
+
+##### [Exercício 02](#2---adicionar-o-retorno-correto-para-os-seguinte-códigos)
+
+##### [Exercício 03](#3---criar-um-módulo-onde-seja-passado-o-retorno-podendo-ser-string-ou-buffer-caso-seja-string-definir-cabeçalho-correto-mesmo-usando-ressend)
+
+##### [Exercício 04](#4---criar-um-módulo-para-renderização-de-views-onde-o-mesmo-recebe-o-caminho-para-a-view-e-o-tipo-do-template-engine-para-retornar-a-view-corretamente)
+
+##### [Exercício 05](#5---criar-um-módulo-para-entrega-de-arquivos-onde-o-mesmo-recebe-o-caminho-para-o-arquivo-e-o-tipo-do-arquivo-para-retornar-o-arquivo-corretamente)
+
+##### [Exercício 06](#6---criar-uma-busca-dos-pokemons-com-o-mongoose-que-pagine-o-resultado-retornando-os-links-corretamente-e-que-essa-busca-seja-retornada-como)
+
+
 ### 1 - Criar um módulo de redirecionamento para quando não encontrar a rota redirecionar para `url/404`
 ```js
 'use strict';
 
-const express = require('express');
-const app = express();
+app.get('/', (req,res) => {
+  res.send('<h1> OI, POKÉMON </h1>');
+}).get('/404', (req,res) => {
+  res.status(404).send('404 - NÃO ENCONTRADO');
+}).get('/*', (req,res) => {
+  res.redirect('/404');
+});
 
-app.get('/', function (req, res) {
-  res.redirect('admin');
-})
-.get('/admin', function(req,res) {
-  res.send('Rota de Admin');
-});
-/*app.use(function(req, res, next) {
-  res.status(404).send('Nada encontrado!');
-});*/
-app.get('*', function(req, res){
-  res.send('<section align="center"><h1>O que houve?! Tivemos um 404 aqui.</h1><hr><img src="https://raw.githubusercontent.com/Webschool-io/be-mean-instagram/master/Apostila/module-nodejs/src/aula-express/public/logo-webschool.png"></section>', 404);
-});
 app.listen(3000, function () {
   console.log('Servidor rodando em localhost:3000');
 });
 ```
-##### Resultado
-![](http://i.imgur.com/B94I4bV.png)
 
 ### 2 - Adicionar o retorno correto para os seguinte códigos:
 > 200,201,202,405,500
