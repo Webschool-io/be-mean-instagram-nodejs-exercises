@@ -5,17 +5,25 @@
 ##PARTE 01
 ###1) Criar um módulo de redirecionamento para quando não encontrar a rota redirecionar para url/404.
 ```js
+//modulo
+'use strict'
+module.exports = (req,res) => {
+  res.redirect('/404');
+}
+
+//Principal
 'use strict';
 
 const express = require('express');
 const app = express();
+const callback404 = require('./modulo.redirect');
 
 app.get('/', (req,res) => {
   res.send('<h1> Hello World </h1>');
 }).get('/404', (req,res) => {
   res.status(404).send('404 - Not Found');
 }).get('/*', (req,res) => {
-  res.redirect('/404');
+  callback404(req,res);
 });
 
 app.listen(3000, () =>{
