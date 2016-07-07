@@ -6,13 +6,13 @@
 
 #Indice
 
-##[Exercicio 1](#1---criar-um-middleware-pre-com-um-erro-e-propagar-o-erro-para-quem-o-chamou-salvar-o-result-e-botar-no-md-deste-exercício)
-##[Exercicio 2](#2---adicione-o-módulo-de-log-aos-dois-schemas-do-blog-e-faça-com-que-gere-um-arquivo-blog-modelsmd-com-pelo-menos-6-operações-no-blog-save-ou-delete) 
-##[Exercicio 3](#3---crie-um-middleware-usando-o-exemplo-do-blog-para-gera-um-log-com-nome-titulo-dos-post-que-foi-buscado-dica-use-o-find)
-##[Exercicio 4](#4-insira-5-pokemons-novos-na-coleção-pokemons-escolha-3-e-os-adicione-em-um-array-e-uma-nova-coleção-chamada-meus-pokemons-utilizando-o-objectid-adicione-o-required-em-campos-que-ache-obrigatório-no-schema-do-pokemon)
-##[Exercicio 5](#5-crie-um-schema-de-exemplo-com-validação-para-os-campos-utilizar-arquitetura-atômica-ou-seja-cada-campo-sendo-um-schema-separado)
-##[Exercicio 6](#6-dê-3-exemplos-diferentes-para-cada-utilizando-as-funções)
-##[Exercicio 7](#7-crie-1-schema-com-todo-crud-funcional-e-métodos-especiais-que-agrupe)
+#####[Exercicio 1](#1---criar-um-middleware-pre-com-um-erro-e-propagar-o-erro-para-quem-o-chamou-salvar-o-result-e-botar-no-md-deste-exercício)
+#####[Exercicio 2](#2---adicione-o-módulo-de-log-aos-dois-schemas-do-blog-e-faça-com-que-gere-um-arquivo-blog-modelsmd-com-pelo-menos-6-operações-no-blog-save-ou-delete) 
+#####[Exercicio 3](#3---crie-um-middleware-usando-o-exemplo-do-blog-para-gera-um-log-com-nome-titulo-dos-post-que-foi-buscado-dica-use-o-find)
+#####[Exercicio 4](#4-insira-5-pokemons-novos-na-coleção-pokemons-escolha-3-e-os-adicione-em-um-array-e-uma-nova-coleção-chamada-meus-pokemons-utilizando-o-objectid-adicione-o-required-em-campos-que-ache-obrigatório-no-schema-do-pokemon)
+#####[Exercicio 5](#5-crie-um-schema-de-exemplo-com-validação-para-os-campos-utilizar-arquitetura-atômica-ou-seja-cada-campo-sendo-um-schema-separado)
+#####[Exercicio 6](#6-dê-3-exemplos-diferentes-para-cada-utilizando-as-funções)
+#####[Exercicio 7](#7-crie-1-schema-com-todo-crud-funcional-e-métodos-especiais-que-agrupe)
 #####[Exercicio 8](#8-crie-1-schema-para-password-com-criptografia-e-arquitetura-atômica)
 #1 - Criar um middleware pre com um erro e propagar o erro para quem o chamou, salvar o result e botar no md deste exercício.
 **middleware-erro.js**
