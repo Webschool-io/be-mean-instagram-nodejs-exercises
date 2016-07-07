@@ -55,6 +55,7 @@ poke.save(err => {
 ╰─○ node app.js
 Error: save erro
 ```
+###[Volta Pro Indice](https://github.com/sostenesfreitas/be-mean-instagram-nodejs-exercises/blob/master/class-08/class-08-resolved-sostenesfreitas-Sostenes-freitas.md#indice)
 #2 - Adicione o módulo de log, aos dois schemas do blog, e faça com que gere um arquivo blog-models.md com pelo menos 6 operações no blog save() ou delete().
 **mid-log.js**
 ```JS
@@ -126,6 +127,7 @@ user : freitas@gmail.com 577acfb532e5e6101d647503 has been saved : Mon Jul 04 20
 user : sostenesfreitas@gmail.com 577acfba14e432a91de8bf91 has been saved : Mon Jul 04 2016 18:06:02 GMT-0300 (BRT)
 user : sostenesfreita@git.io 577acfd0798e34101ff8137e has been saved : Mon Jul 04 2016 18:06:24 GMT-0300 (BRT)
 ```
+###[Volta Pro Indice](https://github.com/sostenesfreitas/be-mean-instagram-nodejs-exercises/blob/master/class-08/class-08-resolved-sostenesfreitas-Sostenes-freitas.md#indice)
 #3 - Crie um middleware usando o exemplo do blog, para gera um log com nome titulo dos post que foi buscado "dica use o find".
 **mid-log.js**
 ```JS
@@ -170,7 +172,7 @@ Model.findOne({email: 'sostenesfreitas@gmail.com'}, (err,data) => {
 ```
 user : sostenesfreitas@gmail.com , Title: First has been saved : Mon Jul 04 2016 18:49:47 GMT-0300 (BRT)
 ```
-
+###[Volta Pro Indice](https://github.com/sostenesfreitas/be-mean-instagram-nodejs-exercises/blob/master/class-08/class-08-resolved-sostenesfreitas-Sostenes-freitas.md#indice)
 #4. Insira 5 pokemons novos, na coleção pokemons, escolha 3 e os adicione em um array e uma nova coleção chamada meus-pokemons, utilizando o ObjectId. Adicione o required em campos que ache obrigatório no Schema do Pokemon.
 **pokemons.js**
 ```JS
@@ -290,6 +292,7 @@ Inseriu:  { __v: 0,
      577ae1b48384335f11689e30,
      577ae1742d7064340e98bf1b  ]  }
 ```
+###[Volta Pro Indice](https://github.com/sostenesfreitas/be-mean-instagram-nodejs-exercises/blob/master/class-08/class-08-resolved-sostenesfreitas-Sostenes-freitas.md#indice)
 #5. Crie um Schema de exemplo com validação para os campos (utilizar Arquitetura Atômica, ou seja cada campo sendo um Schema separado):
     - email
     - cpf
@@ -384,6 +387,7 @@ module.exports  = {
 , required: true
 }
 ```
+###[Volta Pro Indice](https://github.com/sostenesfreitas/be-mean-instagram-nodejs-exercises/blob/master/class-08/class-08-resolved-sostenesfreitas-Sostenes-freitas.md#indice)
 #6. Dê 3 exemplos diferentes, para cada, utilizando as funções:
    - findAndModify
    - findOneAndUpdate
@@ -398,18 +402,17 @@ require('/db/config.js')
 const Schema = mongoose.Schema;
 
 const _schema = {
-  name: {type: String, match: /^./i},
-  description: {type: String, match: /^./i},
-  type: {type: String, match: /^./i},
-  attack: {type: Number, min: 1}
+  name: {type: String},
+  description: {type: String},
+  type: {type: String},
+  attack: {type: Number}
 
 };
 
 const PokemonSchema = new Schema(_schema);
 
-PokemonSchema.statics.findAndModify = function (query, sort, doc, options, callback) {
-  return this.collection.findAndModify(query, sort, doc, options, callback);
-
+PokemonSchema.statics.findAndModify = function (query, mod, options, cb) {
+  return this.collection.findAndModify(query, mod, options, cb);
 };
 
 const Model = mongoose.model('pokemons', PokemonSchema);
@@ -418,7 +421,7 @@ const query  = { attack: {$lte: 5 }  };
 const mod = { type: 'eletric'  };
 const options = { multi: true  };
 
-Model.findAndModify(query, [], mod, options, function (err, data) {
+Model.findAndModify(query, mod, options, function (err, data) {
   if (err) return console.log('Erro: ', err);
   return console.log('Alterou: ', data);
 });
@@ -579,7 +582,7 @@ Removeu:  { active: false,
   _id: 56a9539b4b828d9c186b53ef  }
 
 ```
-
+###[Volta Pro Indice](https://github.com/sostenesfreitas/be-mean-instagram-nodejs-exercises/blob/master/class-08/class-08-resolved-sostenesfreitas-Sostenes-freitas.md#indice)
 #7. Crie 1 Schema com todo CRUD funcional e métodos especiais, que agrupe:
    - virtuals
    - getters & setters
@@ -587,7 +590,7 @@ Removeu:  { active: false,
    - embedded document
    - plugins
    - middlewares
-
+**Fico meio grande rsrsrs**
 [Repositorio](https://github.com/sostenesfreitas/schema-fields)
 #8. Crie 1 Schema para password com criptografia e arquitetura atômica.
    - use SHA256 com SALT como criptografia;
@@ -646,3 +649,4 @@ criptografado: df49bd7e6968ac3d5779a3d42da09404a5e67f435accbc478427010169c0a0d6f
 Mongoose default connection open to: mongodb://localhost/teste
 Mongoose default connection is open
 ```
+###[Volta Pro Indice](https://github.com/sostenesfreitas/be-mean-instagram-nodejs-exercises/blob/master/class-08/class-08-resolved-sostenesfreitas-Sostenes-freitas.md#indice)
