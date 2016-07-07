@@ -7,12 +7,12 @@
 #Indice
 
 ##[Exercicio 1](#1 - Criar um middleware pre com um erro e propagar o erro para quem o chamou, salvar o result e botar no md deste exercício)
-##[Exercicio 2]( https://github.com/sostenesfreitas/be-mean-instagram-nodejs-exercises/blob/master/class-08/class-08-resolved-sostenesfreitas-Sostenes-freitas.md#2---adicione-o-módulo-de-log-aos-dois-schemas-do-blog-e-faça-com-que-gere-um-arquivo-blog-modelsmd-com-pelo-menos-6-operações-no-blog-save-ou-delete) 
+##[Exercicio 2](#2---adicione-o-módulo-de-log-aos-dois-schemas-do-blog-e-faça-com-que-gere-um-arquivo-blog-modelsmd-com-pelo-menos-6-operações-no-blog-save-ou-delete) 
 ##[Exercicio 3]( #3 - Crie um middleware usando o exemplo do blog, para gera um log com nome titulo dos post que foi buscado "dica use o find")
 ##[Exercicio 4]( #4. Insira 5 pokemons novos, na coleção pokemons, escolha 3 e os adicione em um array e uma nova coleção chamada meus-pokemons, util    izando o ObjectId. Adicione o required em campos que ache obrigatório no Schema do Pokemon)
 ##[Exercicio 5](#5. Crie um Schema de exemplo com validação para os campos utilizar Arquitetura Atômica, ou seja cada campo sendo um Schema separado)
-##[Exercicio 6](#6. Dê 3 exemplos diferentes, para cada, utilizando as funções:)
-##[Exercicio 7](#7. Crie 1 Schema com todo CRUD funcional e métodos especiais, que agrupe:)
+##[Exercicio 6](#6. Dê 3 exemplos diferentes, para cada, utilizando as funções)
+##[Exercicio 7](#7. Crie 1 Schema com todo CRUD funcional e métodos especiais, que agrupe)
 #1 - Criar um middleware pre com um erro e propagar o erro para quem o chamou, salvar o result e botar no md deste exercício.
 **middleware-erro.js**
 ```
