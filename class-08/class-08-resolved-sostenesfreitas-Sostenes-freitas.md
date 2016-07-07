@@ -16,7 +16,7 @@
 #####[Exercicio 8](#8-crie-1-schema-para-password-com-criptografia-e-arquitetura-atômica)
 #1 - Criar um middleware pre com um erro e propagar o erro para quem o chamou, salvar o result e botar no md deste exercício.
 **middleware-erro.js**
-```
+```JS
 'use strict';
 const schema = require('./schema.js');
 const mongoose = require('mongoose');
@@ -29,7 +29,7 @@ schema.pre('save', (next) => {
 
 ```
 **app.js**
-```
+```JS
 'use strict';
 require('./db/config')
 const mongoose = require('mongoose');
@@ -57,7 +57,7 @@ Error: save erro
 ```
 #2 - Adicione o módulo de log, aos dois schemas do blog, e faça com que gere um arquivo blog-models.md com pelo menos 6 operações no blog save() ou delete().
 **mid-log.js**
-```
+```JS
 'use strict';
 require('./db/config');
 const mongoose = require('mongoose');
@@ -89,7 +89,7 @@ BlogPost.save((err, post) => {
 		});
 ```
 **schema.js**
-```
+```JS
 'use strict';
 const mongoose = require('mongoose');
 const log = require('./log');
@@ -128,7 +128,7 @@ user : sostenesfreita@git.io 577acfd0798e34101ff8137e has been saved : Mon Jul 0
 ```
 #3 - Crie um middleware usando o exemplo do blog, para gera um log com nome titulo dos post que foi buscado "dica use o find".
 **mid-log.js**
-```
+```JS
 'use strict';
 const mongoose = require('mongoose');
 const log = require('./log');
@@ -154,7 +154,7 @@ BlogPostSchema.post('findOne', function (doc,done) {
 });
 ```
 **app.js**
-```
+```JS
 'use strict';
 require('./db/config');
 const mongoose = require('mongoose');
@@ -173,7 +173,7 @@ user : sostenesfreitas@gmail.com , Title: First has been saved : Mon Jul 04 2016
 
 #4. Insira 5 pokemons novos, na coleção pokemons, escolha 3 e os adicione em um array e uma nova coleção chamada meus-pokemons, utilizando o ObjectId. Adicione o required em campos que ache obrigatório no Schema do Pokemon.
 **pokemons.js**
-```
+```JS
 'use strict';
 const mongoose = require('mongoose');
 require('./db/config.js')
@@ -256,7 +256,7 @@ Inseriu:  { __v: 0,
   created_at: 2016-07-04T22:23:02.752Z  }
 ```
 **meuspokemons.js**
-```
+```JS
 'use strict';
 const mongoose = require('mongoose');
 require('./db/config.js')
@@ -298,7 +298,7 @@ Inseriu:  { __v: 0,
     - ip
 
 **schema.js**
-```
+```JS
 const mongoose = require('mongoose');
 const Schema   = mongoose.Schema;
 
@@ -321,7 +321,7 @@ module.exports = new Schema( _schema  );
 ```
 
 **field-email.js**
-```
+```JS
 const _set = (v) => v.toLowerCase();
 const _validate = (v) => /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(v);
 
@@ -337,7 +337,7 @@ module.exports = {
 ```
 
 **field-cpf.js**
-```
+```JS
 const _validate = (v) => /^(\d{3}\.?\d{3}\.?\d{3}\-?\d{2})$/.test(v);
 
 module.exports = {
@@ -351,7 +351,7 @@ module.exports = {
 ```
 
 **field-cnpj.js**
-```
+```JS
 const _validate = (v) => /^(\d{2}\.?\d{3}\.?\d{3}\/?\d{4}-?\d{2})$/.test(v);
 
  module.exports  = {
@@ -363,7 +363,7 @@ const _validate = (v) => /^(\d{2}\.?\d{3}\.?\d{3}\/?\d{4}-?\d{2})$/.test(v);
 ```
 
 **field-url.js**
-```
+```JS
 const _validate = (v) => /^((http|https|ftp|ftps):\/\/)?([a-z0-9\-]+\.)?[a-z0-9\-]+\.[a-z0-9]{2,4}(\.[a-z0-9]{2,4})?(\/.*)?$/.test(v);
 
  module.exports = {
@@ -375,7 +375,7 @@ const _validate = (v) => /^((http|https|ftp|ftps):\/\/)?([a-z0-9\-]+\.)?[a-z0-9\
 ```
 
 **field-ip.js**
-```
+```JS
 const _validate = (v) => /^(((1[0-9]|[1-9]?)[0-9]|2([0-4][0-9]|5[0-5]))\.){3}((1[0-9]|[1-9]?)[0-9]|2([0-4][0-9]|5[0-5]))$/.test(v);
 
 module.exports  = {
@@ -390,7 +390,7 @@ module.exports  = {
    - findOneAndRemove
 
 **findAndModify**
-```
+```JS
 'use strict';
 
 const mongoose = require( 'mongoose'  );
@@ -438,7 +438,7 @@ Alterou:  { lastErrorObject: { updatedExisting: true, n: 1  },
 
 **findOneAndUpdate**
 
-```
+```JS
 use 'strict';
 
 const query = { name: /charmander/i };
@@ -462,7 +462,7 @@ Alterou:  { __v: 0,
 
 **exemplo 2**
 
-```
+```JS
 'use strict';
 
 const query = { attack: {$lte: 10} };
@@ -485,7 +485,7 @@ Alterou:  { active: false,
   ```
 
 **exemplo 3**
-```
+```JS
 'use strict';
 
 const query = {$and: [{type: 'fire'}, {attack: {$gte: 5}}]};
@@ -514,7 +514,7 @@ Alterou:  { __v: 0,
 
 **Exemplo 1**
 
-```
+```JS
 'use strict';
 
 const query = { $and: [{type: 'grass'}, {attack: {$gte: 100}}] };
@@ -536,7 +536,7 @@ Removeu:  { __v: 0,
 
 **Exemplo 2**
 
-```
+```JS
 'use strict';
 
 const query = { attack: {$lte: 5}};
@@ -558,7 +558,7 @@ Removeu:  { description: 'caterpie',
 
 **Exemplo 3**
 
-```
+```JS
 'use strict';
 
 const query = {attack: {$lte: 10}};
@@ -568,7 +568,7 @@ Model.findOneAndRemove(query, function (err, data) {
   return console.log('Removeu: ', data);
 });
 ```
-**Resultado
+**Resultado**
 ```
 
 Removeu:  { active: false,
@@ -594,7 +594,7 @@ Removeu:  { active: false,
    - use middleware com pre save;
    - use methods.
 **crypt.js**
- ```
+ ```JS
 'use strict';
 
 const mongoose = require( 'mongoose'  );
