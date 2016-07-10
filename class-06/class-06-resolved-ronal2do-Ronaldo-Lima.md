@@ -14,13 +14,10 @@
 ##### [Exercício-05](#remova-todos-os-pokemons-com-attack-acima-de-50)
 
 
-
-
 ## Crie um Schema com cada tipo explicado, inserindo tanto um objeto correto, como um objeto que desencadeie erros de validação padrão, criar especificamente:
 
 * Number: possui os validadores de `max` e `min`    
 * String: possui os validadores de `enum`, `match`, `maxlength` e `minlength`
-
 
 ```js
 const mongoose = require('mongoose');
