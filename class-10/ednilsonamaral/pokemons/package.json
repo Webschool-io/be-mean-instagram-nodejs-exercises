@@ -1,0 +1,21 @@
+{
+  "name": "pokemons",
+  "version": "1.0.0",
+  "description": "Busca de Pokemons via Mongoose",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "mongoose",
+    "express",
+    "nodejs",
+    "webschoool"
+  ],
+  "author": "Ednilson Amaral",
+  "license": "WTFPL",
+  "dependencies": {
+    "express": "^4.14.0",
+    "mongoose": "^4.5.3"
+  }
+}
