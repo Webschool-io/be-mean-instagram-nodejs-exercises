@@ -27,13 +27,11 @@ passaria para a cozinha, e enquanto a cozinha prepara o prato, o garçom atende 
 O V8 compila o JavaScript para c++ alocando esses espaços na memoria criando classes escondidas, em tempo de execução,
 a fim de ter uma representação interna do sistema de tipo e para melhorar o tempo de acesso as propriedades.
 
-Exemplo:
+Exemplo: 
 
->**I/O**  
->Código JavaScript ==> V8 ==> libuv ==> Sistema Operacional
->
->**Callback**  
->Sistema Operacional ==> libuv ==> V8 ==> Código JavaScript
+!['Imagem V8'](http://i.imgur.com/NZlw2Z5.png)
+
+
 
 
 ```
