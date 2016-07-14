@@ -4,7 +4,7 @@
 
 **autor:** Gabriel Kalani
 
-**Data:** 1468455084502
+**Data:** 1468463801442
 
 ### 1 - Faça uma lista de todas as funções que o modulo assert possui e coloque no md.
 
