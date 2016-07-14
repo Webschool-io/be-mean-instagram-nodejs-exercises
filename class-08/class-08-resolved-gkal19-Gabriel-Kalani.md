@@ -397,7 +397,7 @@ Removido:  { value: null, ok: 1 }
 > virtuals, getters & setters, method & static, embedded, document ,plugins, middlewares.
 
 <br>
-> Primeiramente criei um json com o nome de 5 bruxos da série Harry Potter e os importei para o banco `be-mean-instagram`:
+> Primeiramente criei um json com o nome de 5 bruxos da saga Harry Potter e os importei para o banco `be-mean-instagram`:
 ```json
 {name: {first: 'Harry', last: 'Potter'}, age: 36, type: 'Student'}  
 {name: {first: 'Hermione', last: 'Granger'}, age: 36, type: 'Student'}  
