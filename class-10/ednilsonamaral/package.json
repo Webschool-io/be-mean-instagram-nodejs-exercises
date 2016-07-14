@@ -1,0 +1,21 @@
+{
+  "name": "class-10",
+  "version": "1.0.0",
+  "description": "Exercícios da Aula 10 de NodeJS",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "MEAN",
+    "Express",
+    "NodeJS",
+    "Webschool"
+  ],
+  "author": "Ednilson Amaral",
+  "license": "WTFPL",
+  "dependencies": {
+    "express": "^4.14.0",
+    "jade": "^1.11.0"
+  }
+}
