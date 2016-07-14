@@ -89,7 +89,7 @@ app.listen(3000, () => {
 
 ```
 // Chamada 1
-Chamada1: localhost:3000/user/gabriel/gabrielsilva1956@gmail.com/12345678
+Chamada1: localhost:3000/user/nome/gabriel/email/gabrielsilva1956@gmail.com/cpf/12345678
 Retorno:
 {
     "__v":0,
@@ -99,7 +99,7 @@ Retorno:
     "_id":"57869e24e6475ff30c5fd1ce"
 }
 // Chamada 2
-Chamada2: localhost:3000/user/jean%20suissa/jnascimento@gmail.com/12345678
+Chamada2: localhost:3000/user/nome/jean%20suissa/email/jnascimento@gmail.com/cpf/12345678
 Retorno:
 {
    "__v":0,
@@ -109,7 +109,7 @@ Retorno:
    "_id":"57869f2de6475ff30c5fd1cf"
 }
 // Chamada 3
-Chamada3: localhost:3000/user/darth%20vader/vader@empire.net/12345678
+Chamada3: localhost:3000/user/nome/darth%20vader/email/vader@empire.net/cpf/12345678
 Retorno:
 {
    "__v":0,
@@ -119,7 +119,7 @@ Retorno:
    "_id":"57869fb0e6475ff30c5fd1d1"
 }
 // Chamada 4
-Chamada4: localhost:3000/user/chewbacca/chewie@falcon.com/12345678
+Chamada4: localhost:3000/user/nome/chewbacca/email/chewie@falcon.com/cpf/12345678
 Retorno:
 {
    "__v":0,
@@ -129,7 +129,7 @@ Retorno:
    "_id":"57869ff6e6475ff30c5fd1d2"
 }
 // Chamada 5
-Chamada5: localhost:3000/user/han%20solo/han-solo@falcon.com/12345678
+Chamada5: localhost:3000/user/nome/han%20solo/email/han-solo@falcon.com/cpf/12345678
 Retorno:
 {
    "__v":0,
