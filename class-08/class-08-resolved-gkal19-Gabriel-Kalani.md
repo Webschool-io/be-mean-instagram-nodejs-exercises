@@ -1,7 +1,6 @@
 # Node.js - Aula 08 - Exercício 
 
 **User:** [gkal19](https://github.com/gkal19)
-
 **Autor:** Gabriel Kalani
 
 **Data** 1465801860
