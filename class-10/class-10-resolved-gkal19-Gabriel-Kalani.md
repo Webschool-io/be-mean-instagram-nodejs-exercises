@@ -3,22 +3,22 @@
  **Autor:** Gabriel Kalani
  **Data:** 1467298046775
  
- ## Índice
+## Índice
  
- ##### [Exercício 01](#1---criar-um-módulo-de-redirecionamento-para-quando-não-encontrar-a-rota-redirecionar-para-url404)
+##### [Exercício 01](#1---criar-um-módulo-de-redirecionamento-para-quando-não-encontrar-a-rota-redirecionar-para-url404)
  
- ##### [Exercício 02](#2---adicionar-o-retorno-correto-para-os-seguinte-códigos)
+##### [Exercício 02](#2---adicionar-o-retorno-correto-para-os-seguinte-códigos)
  
- ##### [Exercício 03](#3---criar-um-módulo-onde-seja-passado-o-retorno-podendo-ser-string-ou-buffer-caso-seja-string-definir-cabeçalho-correto-mesmo-usando-ressend)
+##### [Exercício 03](#3---criar-um-módulo-onde-seja-passado-o-retorno-podendo-ser-string-ou-buffer-caso-seja-string-definir-cabeçalho-correto-mesmo-usando-ressend)
  
- ##### [Exercício 04](#4---criar-um-módulo-para-renderização-de-views-onde-o-mesmo-recebe-o-caminho-para-a-view-e-o-tipo-do-template-engine-para-retornar-a-view-corretamente)
+##### [Exercício 04](#4---criar-um-módulo-para-renderização-de-views-onde-o-mesmo-recebe-o-caminho-para-a-view-e-o-tipo-do-template-engine-para-retornar-a-view-corretamente)
  
- ##### [Exercício 05](#5---criar-um-módulo-para-entrega-de-arquivos-onde-o-mesmo-recebe-o-caminho-para-o-arquivo-e-o-tipo-do-arquivo-para-retornar-o-arquivo-corretamente)
+##### [Exercício 05](#5---criar-um-módulo-para-entrega-de-arquivos-onde-o-mesmo-recebe-o-caminho-para-o-arquivo-e-o-tipo-do-arquivo-para-retornar-o-arquivo-corretamente)
  
- ##### [Exercício 06](#6---criar-uma-busca-dos-pokemons-com-o-mongoose-que-pagine-o-resultado-retornando-os-links-corretamente-e-que-essa-busca-seja-retornada-como)
+##### [Exercício 06](#6---criar-uma-busca-dos-pokemons-com-o-mongoose-que-pagine-o-resultado-retornando-os-links-corretamente-e-que-essa-busca-seja-retornada-como)
  
  
- ### 1 - Criar um módulo de redirecionamento para quando não encontrar a rota redirecionar para `url/404`
+### 1 - Criar um módulo de redirecionamento para quando não encontrar a rota redirecionar para `url/404`
  ```js
  'use strict';
  
@@ -35,7 +35,7 @@
  });
  ```
  
- ### 2 - Adicionar o retorno correto para os seguinte códigos:
+### 2 - Adicionar o retorno correto para os seguinte códigos:
  > 200,201,202,405,500
  
  ```js
@@ -65,7 +65,7 @@
  });
  ```
  
- ### 3 - Criar um módulo onde seja passado o retorno, podendo ser String ou Buffer, caso seja String definir cabeçalho correto mesmo usando res.send
+### 3 - Criar um módulo onde seja passado o retorno, podendo ser String ou Buffer, caso seja String definir cabeçalho correto mesmo usando res.send
  ```js
  // modulo.js
  module.exports = (req,res) => {
@@ -92,7 +92,7 @@
  
  ```
  
- ### 4 - Criar um módulo para renderização de views, onde o mesmo recebe o caminho para a view e o tipo do template engine, para retornar a view corretamente.
+### 4 - Criar um módulo para renderização de views, onde o mesmo recebe o caminho para a view e o tipo do template engine, para retornar a view corretamente.
  ```js
  'use strict';
  
@@ -144,7 +144,7 @@
  });
  ```
  
- ### 5 - Criar um módulo para entrega de arquivos, onde o mesmo recebe o caminho para o arquivo e o tipo do arquivo, para retornar o arquivo corretamente.
+### 5 - Criar um módulo para entrega de arquivos, onde o mesmo recebe o caminho para o arquivo e o tipo do arquivo, para retornar o arquivo corretamente.
  
  ```js
  // module/SendFiles.js
@@ -203,7 +203,7 @@
  });
  ```
  
- ### 6 - Criar uma busca, dos Pokemons, com o Mongoose que pagine o resultado retornando os links corretamente e que essa busca seja retornada como:
+### 6 - Criar uma busca, dos Pokemons, com o Mongoose que pagine o resultado retornando os links corretamente e que essa busca seja retornada como:
  > html, json
  
  ```js
@@ -349,7 +349,7 @@
  };
  ```
  
- ## Resultado
+## Resultado
  
  > Ants de alguém vim falando merda, vou logo falando que os pokemons foram pegos do professor do WBrunho, que é o mesmo então que o Diego Ferreira apareceu em seus resultados. Não culpo ninguém, mas não venha falar merda depois.
  
