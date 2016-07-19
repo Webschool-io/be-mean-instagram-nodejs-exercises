@@ -3,7 +3,7 @@
 
 **autor:** rony souza
 
-## 1. Por que quando requisitamos ao nosso servidor de *Query String*, **com o Chrome**, ele executa 2 requisições, sendo a última "*vazia*"?
+# 1. Por que quando requisitamos ao nosso servidor de *Query String*, **com o Chrome**, ele executa 2 requisições, sendo a última "*vazia*"?
 
 Porque o Chrome faz a primeira requisição para puxar os dados da `Querystring` e a segunda requisição é para puxar o `fav.icon` do site
 
