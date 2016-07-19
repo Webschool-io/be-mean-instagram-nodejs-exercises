@@ -3,11 +3,11 @@
 
 **autor:** rony souza
 
-# 1. Por que quando requisitamos ao nosso servidor de *Query String*, **com o Chrome**, ele executa 2 requisições, sendo a última "*vazia*"?
+## 1. Por que quando requisitamos ao nosso servidor de *Query String*, **com o Chrome**, ele executa 2 requisições, sendo a última "*vazia*"?
 
 Porque o Chrome faz a primeira requisição para puxar os dados da `Querystring` e a segunda requisição é para puxar o `fav.icon` do site
 
-# 2. Qual a `DIFERENÇA` entre o `GET` e o `POST`?
+## 2. Qual a `DIFERENÇA` entre o `GET` e o `POST`?
  
 **GET**
 - Possui uma capacidade de 1024 caracteres, é utilizado quando se quer passar poucas informações para realizar uma pesquisa ou simplismente passar informações para outra página/api através da URL. O resultado desse método é armazenado no cache do client, ou seja, fica no histórico do navegador.
@@ -15,7 +15,7 @@ Porque o Chrome faz a primeira requisição para puxar os dados da `Querystring`
 **POST**
 - O método POST utiliza ao URI ao contrário de GET, para enviar as informações ao servidor. A URI não é retornável ao cliente, o que torna esse método mais seguro, pois não expõe as informações enviadas no navegador. Esse método não possui limite como o GET para envio, quando é feita uma requisição POST uma conexão paralela é aberta e os dados são enviados por ela. Essa requisição deverá ser formatada no corpo da mensagem como uma querystring, além de enviar no headers seu formato e tamanho.
 
-# 3. Crie um Pokemon na nossa API com seu nome, depois modifique seu nome pelo seu User do Github.
+## 3. Crie um Pokemon na nossa API com seu nome, depois modifique seu nome pelo seu User do Github.
 
 ```
 'use strict'
@@ -85,7 +85,7 @@ req.write(postData);
 req.end();
 ```
 
-# 4. Depois faça o DELETE, criando o script para tal, colocando aqui a resposta.
+## 4. Depois faça o DELETE, criando o script para tal, colocando aqui a resposta.
 
 ```js
 'use strict';
@@ -121,7 +121,7 @@ req.on('error', (e) => {
 });
 req.end();
 ```
-# 5. Escolha uma **API externa** e crie um script para fazer um GET nela **mostrando o resultado com HTML**.
+## 5. Escolha uma **API externa** e crie um script para fazer um GET nela **mostrando o resultado com HTML**.
 ```js
 
 'use strict';
