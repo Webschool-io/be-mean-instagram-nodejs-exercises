@@ -17,6 +17,7 @@ console.log(data.toString());
 // Executando o node no servidor
 $ node sincrono.js
 Arquivo txt.
+
 ```
 Um processo **assíncrono** permite que novos processos sejam executados sem o término do processo atual, eliminando o comportamento de lógica sequencial. Isso significa dizer que o Node.js é uma arquitetura não bloqueante. O diferencial do Node.js a outros servidores web é que ele é projetado para funcionar principalmente de maneira assíncrona, e isso é dado através do uso da biblioteca _libuv_, uma das principais bibliotecas do Node.js. 
 
