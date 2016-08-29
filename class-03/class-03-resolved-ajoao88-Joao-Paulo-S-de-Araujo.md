@@ -1,8 +1,8 @@
 # Node.js - Aula 03 - Exercício
 **user:** [ajoao88](https://github.com/ajoao88)<br>**autor:** João Paulo S de Araújo<br>**date:** 1454957716069  
 
-## 1. Por que quando requisitamos ao nosso servidor de Q!uery String, **com o Chrome**, ele executa 2 requisições, sendp a última "vazia"?
-Porque atumaticamente ele faz uma segunda requisição solicitando o "favicon.ico", esse favicon hoje é usado para melhor identificação da página, fica à esquena do title na aba do navegador.
+## 1. Por que quando requisitamos ao nosso servidor de Query String, **com o Chrome**, ele executa 2 requisições, sendo a última "vazia"?
+Porque atumaticamente ele faz uma segunda requisição solicitando o "favicon.ico", esse favicon hoje é usado para melhor identificação da página, fica à esquerda do título (<title>) na aba do navegador.
 
 ## 2. Qual a DIFERENÇA entre o GET e o POST?
 
@@ -12,7 +12,7 @@ Porque atumaticamente ele faz uma segunda requisição solicitando o "favicon.ic
 |**Padrão de transmissão**      | URL (Uniform Resource Locator).                                                  | URI (Uniform Resource Indentifier).|
 |**Como lida com os dados**     | Expôe os dados na barra de endereços e eles ficam em cache (histórico).          | Encapsula os dados no corpo da requisição HTTP (Hyper Text Transfer Protocol), nenhum dado é visivel ao cliente e nem fica em cache.|
 |**Formato dos dados enviados** | Query String                                                                     | Query String|
-|**Indicações**                 | Envio de poucas e pequenas informações que não necessitam de segurançaou sigilo. | Envio de bastante e/ou grandes informações ou que necessitem de segurança e sigilo.|
+|**Indicações**                 | Envio de poucas e pequenas informações que não necessitam de segurança ou sigilo. | Envio de bastante e/ou grandes informações ou que necessitem de segurança e sigilo.|
 
 ## 3. Crie um Pokemon na nossa API com seu nome, depois modifique seu nome pelo seu User do Github, colocando aqui a resposta de cada passo.
 ### Criação:
