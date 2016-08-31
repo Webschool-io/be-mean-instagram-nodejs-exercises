@@ -6,10 +6,8 @@
 ## Explique como um processo síncrono e assíncrono roda no Node.js, dê um exemplo para cada.
 Síncrono:
 	Cada processo requisitado entra em uma fila, e o processamento só passa para outro quando termina este.
-
 	Neste exemplo vemos um código síncrono, o sistema espera o arquivo ser lido para continuar:
 
-	```
 	var fs = require("fs");
 	fs.readFileSync(‘arquivo.txt’,function(err,data){
     	if(!err) {
@@ -18,15 +16,11 @@ Síncrono:
 	});
 	console.log("Arquivo Lido com sucesso!");
 
-	```
-
 Assíncrono:
 	Varios processo são atendidos ao mesmo tempo e media que vão terminando, mandam uma notificação por meio de um callback.
-
 	Neste exemplo vemos um código assíncrono, o sistema não espera o arquivo ser lido para continuar:
 
 
-	```
 	var fs = require("fs");
 	fs.readFile(‘arquivo.txt’,function(err,data){
     	if(!err) {
@@ -35,7 +29,6 @@ Assíncrono:
 	});
 	console.log("Arquivo Lido com sucesso!");
 
-	```
 
 
 ## Como o V8 executa JavaScript? Demonstre 1 exemplo com código ou imagem.
