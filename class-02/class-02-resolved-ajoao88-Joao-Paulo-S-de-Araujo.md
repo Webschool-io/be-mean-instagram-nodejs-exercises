@@ -18,23 +18,23 @@ D|Delete|DELETE
 Para padronizar a comunicação entre cliente e servidor, com os **status codes** fica clara a resposta do servidor para a requisição feita, permitindo tratá-la adequadamente.
 
 ##### 101 - Mudando protocolos
-![Mudando protocolos](https://http.cat/101)
+![Mudando protocolos](https://http.cat/101)  
 Isso significa que o solicitante pediu ao servidor para mudar os protocolos e o servidor está reconhecendo que irá fazê-lo
 
 ##### 204 - Nenhum Conteúdo
-![Nenhum conteúdo](https://http.cat/204)
+![Nenhum conteúdo](https://http.cat/204)  
 O servidor processou a solicitação com sucesso, mas não é necessário nenhuma resposta.
 
 ##### 301 - Movido permanentemente
-![Movido permanentemente](https://http.cat/301)
+![Movido permanentemente](https://http.cat/301)  
 Esta e todas as solicitações futuras devem ser direcionada para o URI .
 
 ##### 402 - Pagamento Necessário
-![Pagamento Necessário](https://http.cat/402)
+![Pagamento Necessário](https://http.cat/402)  
 Reservado para uso futuro. A intenção original era que esse código pudesse ser usado como parte de alguma forma de dinheiro digital ou de micro pagamento regime, mas isso não aconteceu, e esse código não é usado normalmente.
 
 ##### 500 - Erro interno no servidor
-![Erro interno no servidor](https://http.cat/500)
+![Erro interno no servidor](https://http.cat/500)  
 O servidor ainda não suporta a funcionalidade ativada
 
 ## Explique o que é cada parâmetro da função recebida no `createServer`.
@@ -50,7 +50,7 @@ Armazena os dados da requisição do cliente.
 ## O que é e para que serve a Querystring?
 
 `Querystring` é um modelo de passagem de informações entre cliente e servidor, nele são enviados conjuntos de propriedade e valor, onde a propriedade e valor são separados por "=" e os conjuntos são separados por "&".
-São enviado via **url** no final do endereço após um "?".
+São enviados via **url** no final do endereço após um "?".
 
 Ex.: http://enderecoweb/?nome=joao&idade=28
 
