@@ -71,7 +71,6 @@ var server = http.createServer(function(req,res){
             res.writeHead(404, {'Content-Type': 'application/json;charset=utf-8'});
             retornoJson(res, 'ERRO: Rota não encontrada ou não autorizado.');
             break;
-
     }
     res.end();    
 });
