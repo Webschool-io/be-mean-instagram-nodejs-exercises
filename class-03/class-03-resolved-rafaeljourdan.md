@@ -238,7 +238,6 @@ const retornarHtml = (nome) => {
 };
 ```
 
-
 ```html
 $ node exerc_get_api.js
 STATUS: 200
