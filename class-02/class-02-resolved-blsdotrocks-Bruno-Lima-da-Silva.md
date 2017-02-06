@@ -1,4 +1,4 @@
-# Node.js - Aula 01 - Exercício
+# Node.js - Aula 02 - Exercício
 
 autor: Bruno Lima da Silva
 
