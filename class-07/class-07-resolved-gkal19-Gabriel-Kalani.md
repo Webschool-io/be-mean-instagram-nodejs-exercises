@@ -24,24 +24,26 @@
 ## 1. Crie um função que extenda EventEmitter, nela crie um method chamado init, ele deverá ser chamado toda vez que a sua função for iniciada. Use o código 04 como base (use ele no prototype).
 
 ```js
-var EventEmitter = require('events').EventEmitter;
-var util = require('util');
+import {EventEmitter} from 'events';
+import util from 'util';
 
-function User(data) {
-  this.name = data.name;
-  this.on('user:init', Name);
-  EventEmitter.call(this);
-};
+class User {
+  constructor(data) {
+    this.name = data.name;
+    this.on('user:init', Name);
+    EventEmitter.call(this);
+  }
+
+  init() {
+    this.emit('user:init', this.name);
+  }
+}
 
 util.inherits(User, EventEmitter);
 
-User.prototype.init = function() {
-  this.emit('user:init', this.name);
-};
-
 function Name(name) {
   console.log('Tá tranquilo, tá compilado. Meu nome é MC', name);
-};
+}
 
 var User = new User({name: 'Pokémon'});
 User.init();
@@ -55,22 +57,20 @@ Tá tranquilo, tá compilado. Meu nome é MC Pokémon
 ## 2. Faça um módulo simples para ler diretórios usando módulo FS (fs.readdir), usando o exemplo do código 03, esse modulo deve retornar uma Promise.
 
 ```js
-'use strict';
-
-const fs = require('fs');
+import fs from 'fs';
 
 function readDir(path) {
-  return new Promise( function (resolve, reject) {
-    fs.readdir(path, function (err, data) {
+  return new Promise( (resolve, reject) => {
+    fs.readdir(path, (err, data) => {
       err ? reject(err) : resolve(data);
     });
   });
 }
 
 // Executando
-readDir('node_modules').then(function (data) {
+readDir('node_modules').then(data => {
   console.log(data);
-}).catch(function (err) {
+}).catch(err => {
   console.log(err);
 });
 
@@ -84,9 +84,7 @@ $ node rogue.js
 ## 3. Os schemas do mongoose podem usar promises, em seus alguns methods, de “crud”, liste 3 methods que usam promise, se chamada da função exec(), no final e 3 que usam exec(), mostre ao menos um exemplo de cada.
 
 ```js
-'use strict';
-
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 mongoose.connect('mongodb://localhost/be-mean-instagram');
 
 // Aqui criarei um schema de um Pokémon
@@ -104,7 +102,7 @@ const pokemonSchema = new mongoose.Schema({
 const PokemonModel = mongoose.model('pokemons', pokemonSchema);
 
 // Aqui está os dados do schema do meu Pokémon
-var pokemon = {
+const pokemon = {
   name: 'Bulbasaur',
   attack: 100,
   defense: 100,
