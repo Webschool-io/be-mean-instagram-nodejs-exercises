@@ -21,6 +21,7 @@
 // schema.js
 import mongoose from 'mongoose';
 
+
 const nome = {type: String, required: true};
 const email = {type: String, required: true};
 const cpf = {type: String, required: true};
@@ -33,12 +34,14 @@ const _schema = {
 
 const UserSchema = new mongoose.Schema(_schema);
 
+
 export default UserSchema;
 ```
 
 ```js
 require("./db-config");
 import UserSchema from './schema';
+
 const UserModel = require('./model')("Usuarios",UserSchema);
 
 const callback = (err, data, res) => {
@@ -53,6 +56,7 @@ const CRUD = {
 }
 
 export default CRUD;
+
 ```
 
 ```js
@@ -60,6 +64,7 @@ export default CRUD;
 import express from 'express';
 const app = express();
 import UserModel from './user-model';
+
 
 
 app.get('/user/:nome/:email/:cpf', (req, res) => {
@@ -141,6 +146,7 @@ Retorno:
 // user-model.js
 require("./db-config");
 import UserSchema from './schema';
+
 const UserModel = require('./model')("Usuarios",UserSchema);
 
 const callback = (err, data, res) => {
@@ -158,6 +164,7 @@ const CRUD = {
 }
 
 export default CRUD;
+
 ```
 
 ```js
@@ -173,7 +180,6 @@ app.get('/find', (req,res) =>{
     const query = {nome: q};
     UserModel.retrive(res, query);    
 });
-
 
 app.listen(3000, () => {
   console.log('Servidor rodando na porta 3000');
@@ -200,6 +206,7 @@ import express from 'express';
 const app = express();
 import util from 'util';
 import UserModel from './user-model';
+
 
 
 app.get('/find', (req,res) =>{
@@ -850,6 +857,7 @@ Express Generator
 
 ```js
 // app.js
+
 require('./config/db-config');
 import express from 'express';
 import path from 'path';
@@ -878,8 +886,10 @@ app.use('/', routes);
 app.use('/api/users', UsersApi);
 
 // catch 404 and forward to error handler
+
 app.use((req, res, next) => {
   const err = new Error('Not Found');
+
   err.status = 404;
   next(err);
 });
@@ -889,7 +899,9 @@ app.use((req, res, next) => {
 // development error handler
 // will print stacktrace
 if (app.get('env') === 'development') {
-  app.use((err, req, res, next) => {
+
+app.use((err, req, res, next) => {
+
     res.status(err.status || 500);
     res.render('error', {
       message: err.message,
@@ -900,13 +912,16 @@ if (app.get('env') === 'development') {
 
 // production error handler
 // no stacktraces leaked to user
+
 app.use((err, req, res, next) => {
+
   res.status(err.status || 500);
   res.render('error', {
     message: err.message,
     error: {}
   });
 });
+
 export default app;
 ```
 
@@ -974,3 +989,4 @@ Retorno:
   "n": 1
 }
 ```
+

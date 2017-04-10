@@ -63,19 +63,19 @@ const app = express();
 const UserModel = require('./user-model');
 
 
-app.get('/user/:nome/:email/:cpf', (req, res) => {
-  const nome = req.params.nome;
-  const email = req.params.email;
-  const cpf = req.params.cpf;
-
-  const user = {"nome": nome, "email":email, "cpf":cpf };
-  UserModel.create(res, user);
+app.get('/user/nome/:nome/email/:email/cpf/:cpf', (req, res) => {
+	const nome = req.params.nome;
+	const email = req.params.email;
+	const cpf = req.params.cpf;
+	
+	const user = {"nome": nome, "email":email, "cpf":cpf };
+	UserModel.create(res, user);
 
 });
 
 
 app.listen(3000, () => {
-  console.log("Servidor sendo executado na porta 3000");
+	console.log("Servidor sendo executado na porta 3000");
 });
 ```
 
@@ -84,37 +84,37 @@ Resultado:
 ```
 Chamadas pelo postman utilizando o método get:
 
-Chamada1: localhost:3000/user/diego/tuchedsf@gmail.com/11111111111
+Chamada1: http://localhost:3000/user/nome/Diego/email/tuchedsf@gmail.com/cpf/23434675896
 Retorno:
 {
   "__v": 0,
-  "nome": "diego",
+  "nome": "Diego",
   "email": "tuchedsf@gmail.com",
-  "cpf": "11111111111",
-  "_id": "575c280974d3a2912a7ab077"
+  "cpf": "23434675896",
+  "_id": "5786c56b9e7249bb11b3753f"
 }
 
-Chamada2: localhost:3000/user/teste/teste@teste.com/12345678910
+Chamada2: http://localhost:3000/user/nome/teste/email/teste@teste.com/cpf/12345678910
 Retorno:
 {
   "__v": 0,
   "nome": "teste",
   "email": "teste@teste.com",
   "cpf": "12345678910",
-  "_id": "575c28eb74d3a2912a7ab078"
+  "_id": "5786c6369e7249bb11b37540"
 }
 
-Chamada3: localhost:3000/user/bemean/be-mean@be-mean.com/88888888888
+Chamada3: http://localhost:3000/user/nome/bemean/email/be-mean@be-mean.com/cpf/88888888888
 Retorno:
 {
   "__v": 0,
   "nome": "bemean",
   "email": "be-mean@be-mean.com",
   "cpf": "88888888888",
-  "_id": "575c2a6574d3a2912a7ab079"
+  "_id": "5786c66e9e7249bb11b37541"
 }
 
-Chamada4: localhost:3000/user/webschool/webschool@io.com/99999999999
+Chamada4: http://localhost:3000/user/nome/webschool/email/webschool@io.com/cpf/99999999999
 Retorno:
 {
   "__v": 0,
@@ -124,7 +124,7 @@ Retorno:
   "_id": "575c2a8a74d3a2912a7ab07a"
 }
 
-Chamada5: localhost:3000/user/tuche/tuche@tartaruga.com/23456787647
+Chamada5: localhost:3000/user/nome/tuche/email/tuche@tartaruga.com/cpf/23456787647
 Retorno:
 {
   "__v": 0,
