@@ -8,12 +8,10 @@
 
 #### 1 - Insira 5 pokemons novos, na coleção pokemons, escolha 3 e os adicione em um array e uma nova coleção chamada meus-pokemons, utilizando o ObjectId. Adicione o required em campos que ache obrigatório no Schema do Pokemon.
 ```js
-'use strict';  
-
-const mongoose = require('mongoose');  
-const dbURI = 'mongodb://localhost/be-mean-pokemons';  
-mongoose.connect(dbURI);  
-const Schema = mongoose.Schema;  
+import mongoose from 'mongoose';
+const dbURI = 'mongodb://localhost/be-mean-pokemons';
+mongoose.connect(dbURI);
+const Schema = mongoose.Schema;
 
 const _schema = {  
   name: {type: String, required: true, match: /^./i},  
@@ -21,9 +19,9 @@ const _schema = {
   type: {type: String, required: true, match: /^./i},  
   attack: {type: Number, min: 1},  
   height: {type: Number}  
-};  
-const PokemonSchema = new Schema(_schema);  
-const PokemonModel = mongoose.model('pokemons', PokemonSchema);  
+};
+const PokemonSchema = new Schema(_schema);
+const PokemonModel = mongoose.model('pokemons', PokemonSchema);
 
 const data = [  
   {  
@@ -65,7 +63,7 @@ const data = [
     attack: 99,  
     height: 1.7  
   },    
-];  
+];
 
 PokemonModel.create(data, (err, data) => {  
   if (err) return console.log('Erro: ', err);  
@@ -75,23 +73,21 @@ PokemonModel.create(data, (err, data) => {
 
 #### Escolher 3 pokemons e inserindo em uma nova coleção com o ObjectId.
 ```js
-'use strict';  
-
-const mongoose = require('mongoose');  
-const dbURI = 'mongodb://localhost/be-mean-instagram';  
-mongoose.connect(dbURI);  
-const Schema = mongoose.Schema;  
+import mongoose from 'mongoose';
+const dbURI = 'mongodb://localhost/be-mean-instagram';
+mongoose.connect(dbURI);
+const Schema = mongoose.Schema;
 
 const _schema = {  
   pokemons: [{type: Schema.Types.ObjectId, ref: 'pokemons'}]  
-};  
+};
 
-const PokemonSchema = new Schema(_schema);  
-const PokemonModel = mongoose.model('myPokemons', PokemonSchema);  
- 
+const PokemonSchema = new Schema(_schema);
+const PokemonModel = mongoose.model('myPokemons', PokemonSchema);
+
 const data = {  
   pokemons: ['575c12969d2f2ed60edbb52b', '575c12969d2f2ed60edbb52c', '575c12969d2f2ed60edbb52d']  
-};  
+};
 
 PokemonModel.create(data, (err, data) => {  
   if (err) return console.log('Erro: ', err);  
@@ -105,11 +101,9 @@ PokemonModel.create(data, (err, data) => {
 `app.js`  
 
 ```js  
-'use strict';  
+require('./db/config');
 
-require('./db/config');  
-
-const CRUD = require('./controller');  
+import CRUD from './controller';
 
 const data = {  
   email: 'gabrielsilva1956@gmail.com',  
@@ -117,7 +111,7 @@ const data = {
   cnpj: 123456,  
   url: 'www.gabrielkalani.com.br',  
   ip: '192.168.0.1'  
-};  
+};
 
 CRUD.create(data);  
 ```
@@ -126,14 +120,14 @@ CRUD.create(data);
 `schema.js`  
 
 ```js  
-const mongoose = require('mongoose');  
-const Schema = mongoose.Schema;  
+import mongoose from 'mongoose';
+const Schema = mongoose.Schema;
 
-const email = require('./fields/field-email');  
-const cpf = require('./fields/field-cpf');  
-const cnpj = require('./fields/field-cnpj');  
-const url = require('./fields/field-url');  
-const ip = require('./fields/field-ip');  
+import email from './fields/field-email';
+import cpf from './fields/field-cpf';
+import cnpj from './fields/field-cnpj';
+import url from './fields/field-url';
+import ip from './fields/field-ip';
 
 const _schema = {  
   email,  
@@ -141,16 +135,16 @@ const _schema = {
   cnpj,  
   url,  
   ip  
-};  
+};
 
-module.exports = new Schema(_schema);  
+export default new Schema(_schema);  
 ```
 
 
 `model.js`  
 
 ```js  
-module.exports = function (Schema, ModelName) {  
+export default (Schema, ModelName) => {  
   const mongoose = require('mongoose');  
   return mongoose.model(ModelName, Schema);  
 };  
@@ -160,42 +154,40 @@ module.exports = function (Schema, ModelName) {
 `controller.js`  
 
 ```js  
-'use strict';  
-
-const Schema = require('./schema');  
-const Model = require('./model')(Schema, 'atomicos');  
+import Schema from './schema';
+const Model = require('./model')(Schema, 'atomicos');
 
 const CRUD = {  
-  create: function(data) {  
+  create(data) {  
     console.log("create: ", data);  
     const AmoticosModel = new Model(data);  
-    AmoticosModel.save(function (err, data) {  
+    AmoticosModel.save((err, data) => {  
       if (err) return console.log('ERRO: ', err);  
       return console.log('Inseriu:', data);  
     });  
   },  
-  retrieve: function(query) {  
-    Model.find(query, function (err, data) {  
+  retrieve(query) {  
+    Model.find(query, (err, data) => {  
       if (err) return console.log('ERRO: ', err);  
       return console.log('Buscou:', data);  
     });  
   },  
-  update: function(query, mod, options) {  
+  update(query, mod, options) {  
     var options = options || {};  
-    Model.update(query, mod, options, function (err, data) {  
+    Model.update(query, mod, options, (err, data) => {  
       if (err) return console.log('ERRO: ', err);  
       return console.log('Alterou:', data);  
     });  
   },  
-  delete: function(query) {  
-    Model.remove(query, function (err, data) {  
+  delete(query) {  
+    Model.remove(query, (err, data) => {  
       if (err) return console.log('ERRO: ', err);  
       return console.log('Deletou:', data);  
     });  
   },  
-};  
+};
 
-module.exports = CRUD;  
+export default CRUD;  
 ```
 
 
@@ -203,7 +195,7 @@ module.exports = CRUD;
 
 ```js  
 //field-email.js  
-module.exports = {  
+export default {  
   type: String,   
   match:   
     [  
@@ -211,19 +203,19 @@ module.exports = {
       'Preencha um e-mail válido!'  
     ],   
     required: true  
-  }  
+  };
 
 //field-cpf.js  
-module.exports = {type: Number, minlength: 3, maxlength: 11, required: true}  
+export default {type: Number, minlength: 3, maxlength: 11, required: true};
 
 //field-cnpj.js  
-module.exports = {type: Number, minlength: 3}  
+export default {type: Number, minlength: 3};
 
 //field-url.js  
-module.exports = {type: String, required: true, match: /([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/}  
+export default {type: String, required: true, match: /([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/};
 
 //field-ip.js  
-module.exports = {type: String, maxlenght: 15}  
+export default {type: String, maxlenght: 15};  
 ```
 
 
@@ -252,9 +244,7 @@ Inseriu: { _id: 56d84cfdac419e351638ase0,
 
 #### Schema e Model
 ```js
-'use strict';
-
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 const db = 'mongodb://localhost/be-mean-instagram';
 
 mongoose.connect( db );
@@ -274,9 +264,7 @@ const Model = mongoose.model('pokemons', PokemonSchema);
 
 #### findAndModify
 ```js
-'use strict';
-
-const mongoose = require( 'mongoose' );
+import mongoose from 'mongoose';
 const db = 'mongodb://localhost/be-mean-instagram';
 mongoose.connect(db);
 
@@ -301,7 +289,7 @@ const query  = { attack: {$lte: 5 } };
 const mod = { type: 'eletric' };
 const options = { multi: true };
 
-Model.findAndModify(query, [], mod, options, function (err, data) {
+Model.findAndModify(query, [], mod, options, (err, data) => {
   if (err) return console.log('Erro: ', err);
   return console.log('Alterado: ', data);
 });
@@ -317,7 +305,7 @@ Alterado:  { value: null, ok: 1 }
 const query = { name: /Pikachu/i};
 const mod = { type: 'Electric' };
 
-Model.findOneAndUpdate(query, mod, {}, function (err, data) {
+Model.findOneAndUpdate(query, mod, {}, (err, data) => {
   if (err) return console.log('Erro: ', err);
   return console.log('Alterado: ', data);
 })
@@ -331,7 +319,7 @@ const query = { attack: {$lte: 10}};
 const mod = {attack: 50};
 const options = {multi: true};
 
-Model.findOneAndUpdate(query, mod, options, function (err, data) {
+Model.findOneAndUpdate(query, mod, options, (err, data) => {
   if (err) return console.log('Erro: ', err);
   return console.log('Alterado: ', data);
 });
@@ -345,7 +333,7 @@ const query = {$and: [{type: 'fire'}, {attack: {$gte: 5}}]};
 const mod = {attack: 51, description: 'update attack'};
 const options = {multi: true};
 
-Model.findOneAndUpdate(query, mod, options, function (err, data) {
+Model.findOneAndUpdate(query, mod, options, (err, data) => {
   if (err) return console.log('Erro: ', err);
   return console.log('Alterado: ', data);
 });
@@ -359,7 +347,7 @@ Alterado:  { value: null, ok: 1 }
 ```js
 const query = { attack: null };
 
-Model.findOneAndRemove(query, function (err, data) {
+Model.findOneAndRemove(query, (err, data) => {
   if (err) return console.log('Erro: ', err);
   return console.log('Removeu: ', data);
 });
@@ -372,7 +360,7 @@ Removido:  { value: null, ok: 1 }
 ```js
 const query = { $and: [{type: 'grass'}, {attack: {$gte: 100}}]};
 
-Model.findOneAndRemove(query, function (err, data) {
+Model.findOneAndRemove(query, (err, data) => {
   if (err) return console.log('Erro: ', err);
   return console.log('Removeu: ', data);
 });
@@ -385,7 +373,7 @@ Removido:  { value: null, ok: 1 }
 ```js
 const query = {attack: {$lte: 10}};
 
-Model.findOneAndRemove(query, function (err, data) {
+Model.findOneAndRemove(query, (err, data) => {
   if (err) return console.log('Erro: ', err);
   return console.log('Removeu: ', data);
 });
@@ -408,27 +396,24 @@ Removido:  { value: null, ok: 1 }
 ```
 
 ```js
-// app.js
-'use strict';  
+require('./db/config');
 
-require('./db/config');  
-
-const CRUD = require('./controller');  
+import CRUD from './controller';
 
 const hab1 = {  
   title: 'Abaffiato',  
   since: 2005  
-};  
+};
 
 const hab2 = {  
   title: 'Liberacorpus',  
   since: 1999  
-};  
+};
 
 const hab3 = {  
   title: 'Levicorpus',  
   since: 2001  
-};  
+};
 
 const data = {  
   name: {  
@@ -438,64 +423,61 @@ const data = {
   age: 38,  
   skills: [hab1, hab2, hab3],  
   type: 'Master'  
-};  
+};
 
-CRUD.create(data);  
+CRUD.create(data);
 
 // Search  
-const query = "575c32ed6cc3d63b8a6d5f0f";  
+const query = "575c32ed6cc3d63b8a6d5f0f";
 
-CRUD.retrieve(query);  
+CRUD.retrieve(query);
 
 
 // Method Searc
-const query = {name: {first: 'Harry', last: 'Potter'}, class: /Student/i};  
+const query = {name: {first: 'Harry', last: 'Potter'}, class: /Student/i};
 
-CRUD.retrieve_method(query);  
+CRUD.retrieve_method(query);
 
 
 // Static Search
-const query = {name: {first: 'Alvus', last: 'Dumbledore'}};  
+const query = {name: {first: 'Alvus', last: 'Dumbledore'}};
 
-CRUD.retrieve_static(query);  
+CRUD.retrieve_static(query);
 
 // Pre-Count Middleware Search
-const query = {age: 37};  
+const query = {age: 37};
 
 CRUD.retrieve_middleware(query);
 ```
 
 ```js
 // Controller.js
-'use strict';  
-
-const mongoose = require('mongoose');  
-
-const Schema = require('./schema');  
-const Model = require('./model')(Schema, 'bruxos');  
+import mongoose from 'mongoose';
+import Schema from './schema';
+const Model = require('./model')(Schema, 'bruxos');
 
 const CRUD = {  
-  create: function(data) {  
+  create(data) {  
     console.log("Criado: ", data);  
     const bruxoModel = new Model(data);  
-    bruxoModel.save(function (err, data) {  
+    bruxoModel.save((err, data) => {  
       if (err) return console.log('ERRO: ', err);  
       return console.log('Inseriu:', data);  
     });  
   },  
-  retrieve: function(query) {  
+  retrieve(query) {  
     Schema  
       .virtual('name.full')  
       .get(function (){  
-        return this.name.first + ' ' + this.name.last;  
+        return `${this.name.first} ${this.name.last}`;  
       });  
 
-    Model.findById(query, function (err, data) {  
+    Model.findById(query, (err, data) => {  
       if (err) return console.log('ERRO: ', err);  
       return console.log('Nome: ', data.name.full, '\nTipo de bruxo: ', data.weight_class, '\nIdade: ', data.age);  
     });  
   },  
-  retrieve_method: function(query){  
+  retrieve_method(query) {  
     Schema.methods.findSimilarType = function findSimilarType (callback) {  
       return this.model('Categoria', Schema);  
     };  
@@ -505,7 +487,7 @@ const CRUD = {
 
     
   },  
-  retrieve_static: function(query) {  
+  retrieve_static(query) {  
     Schema.statics.search = function (name, callback) {  
       return this.where('name', new RegExp(name, 'i')).exec(callback);  
     };  
@@ -514,28 +496,28 @@ const CRUD = {
 
   
   },  
-  retrieve_middleware: function(query){  
+  retrieve_middleware(query) {  
     const countQuery = Model.where(query).count((err, count) => {  
       if (err) return console.log('ERRO: ', err);  
-      return console.log('Existem ' + count + ' bruxos com a mesma idade!');  
+      return console.log(`Existem ${count} bruxos com a mesma idade!`);  
     });  
   },  
-  update: function(query, mod, options) {  
+  update(query, mod, options) {  
     var options = options || {};  
-    Model.update(query, mod, options, function (err, data) {  
+    Model.update(query, mod, options, (err, data) => {  
       if (err) return console.log('ERRO: ', err);  
       return console.log('Alterado:', data);  
     });  
   },  
-  delete: function(query) {  
-    Model.remove(query, function (err, data) {  
+  delete(query) {  
+    Model.remove(query, (err, data) => {  
       if (err) return console.log('ERRO: ', err);  
       return console.log('Deletado:', data);  
     });  
   },  
-};  
+};
 
-module.exports = CRUD;
+export default CRUD;
 ```
 ##### Resultado
 ```shell
