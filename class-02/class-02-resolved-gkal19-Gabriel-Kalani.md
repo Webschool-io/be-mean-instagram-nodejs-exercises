@@ -41,8 +41,8 @@ Nela podemos transferir dados do URL pelo GET.
 ## Escreva no código do `server.js` uma forma de entregar um JSON de sucesso em 4 rotas diferentes:
 
 ```js
-const http = require('http');
-http.createServer(function(req,res){
+import http from 'http';
+http.createServer((req, res) => {
 	res.writeHead(200, {'Content-Type': 'application/json;charset=utf-8'});
 	switch(req.url){
 		case '/create':
@@ -63,12 +63,12 @@ http.createServer(function(req,res){
 		break;
 	}
 	res.end();
-}).listen(3000, function(){
+}).listen(3000, () => {
 	console.log('Servidor levantando na 3000');
 });
 
 function createJson(response, id, mensagem, url){
-	var json = {
+	const json = {
 		'id': id,
 		'mensagem': mensagem,
 		'url': url,
