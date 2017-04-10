@@ -29,9 +29,7 @@
 
 ```
 `// add.spec.js
-'use strict';  
-
-const assert = require('assert');  
+import assert from 'assert';
 
 assert.deepStrictEqual(3, 2, ['Os números não são iguais!']);
 ```
@@ -68,9 +66,7 @@ AssertionError: Os números não são iguais!
 
 ```
 // add.spec.js
-'use strict';  
-
-const assert = require('assert');  
+import assert from 'assert';
 
 assert.deepStrictEqual(3, 3, ['Os números não são iguais!']);
 ```
@@ -89,32 +85,28 @@ gkal19:~/workspace/dever/nodejs $ mocha add.spec.js
 
 ```js 
 // calc.js
-'use strict';  
-
-let sum  = (a,b) => a+b;  
-let sub  = (a,b) => a-b;  
-let mult = (a,b) => a*b;  
-let div  = (a,b) => a === 0 || b === 0 ? 0 : a / b;  
-let sqtr = a => Math.sqrt(a);  
+let sum  = (a,b) => a+b;
+let sub  = (a,b) => a-b;
+let mult = (a,b) => a*b;
+let div  = (a,b) => a === 0 || b === 0 ? 0 : a / b;
+let sqtr = a => Math.sqrt(a);
 
 
-module.exports = {  
-	sum  : sum,  
-	sub  : sub,  
-	mult : mult,  
-	div  : div,  
-	sqtr : sqtr  
+export default {  
+	sum,  
+	sub,  
+	mult,  
+	div,  
+	sqtr  
 };  
 ```
 
 ```js  
 // calc.spec.js  
-'use strict';  
+import {expect} from 'chai';
+import calc from './calc';
 
-const expect = require('chai').expect;  
-const calc = require('./calc');  
-
-describe('calc', function() {  
+describe('calc', () => {  
 	describe('calc testing',  () => {  
 		it('sum of two number',  () => {  
 			expect(calc.sum(1,1)).to.equal(2);  
@@ -195,11 +187,9 @@ gkal19:~/workspace/dever/nodejs $ mocha calc.spec.js
 
 ```js 
 // schema-method.spec.js
-'use strict';  
-
-const expect = require('chai').expect,  
-      Pokemon = require('./schema-method'),  
-      util = require('util');  
+import {expect} from 'chai';
+import Pokemon from './schema-method';
+import util from 'util';
 
 describe('Testando as Methods', () => {  
   const namePokemonzinho = {name: 'Pikachu'};  
@@ -233,11 +223,9 @@ gkal19:~/workspace/dever/nodejs mocha schema-method.spec.js
 
 ```js  
 // schema-static.spec.js
-'use strict';  
-
-const expect = require('chai').expect,  
-      Pokemon = require('./schema-method'),  
-      util = require('util');  
+import {expect} from 'chai';
+import Pokemon from './schema-method';
+import util from 'util';
 
 describe('Testando Static', () => {  
   const name = {name: /pikachu/i};  
@@ -269,10 +257,8 @@ gkal19:~/workspace/dever/nodejs mocha schema-static.spec.js
 
 ```js
 // UPDATE
-'use strict';  
-
-const expect = require('chai').expect;  
-const ctrl = require('./pokemon-controller');  
+import {expect} from 'chai';
+import ctrl from './pokemon-controller';
 
 describe('Controller of Pokemons', () => {  
   describe('Atualizar um Pokémon... ', () => {  
@@ -301,10 +287,8 @@ Alterou: { result: { ok: 1, n: 1},
 1 passing (56ms) 
 
 // DELETE  
-'use strict';  
-
-const expect = require('chai').expect;  
-const ctrl = require('./pokemon-controller');  
+import {expect} from 'chai';
+import ctrl from './pokemon-controller';
 
 describe('Controller of Pokemons', () => {  
   describe('Deletar um Pokémon... ', () => {  
