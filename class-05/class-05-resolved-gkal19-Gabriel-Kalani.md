@@ -118,26 +118,24 @@ Oops! Parece que tivemos um erro...
 ### Criar um arquivo.
 ```js
 // file: createFile
-var fs = require('fs')
+import fs from 'fs';
 
-var write = fs.writeFileSync("./hello.txt","Tá tranquilo, Tá compilado!");
+const write = fs.writeFileSync("./hello.txt","Tá tranquilo, Tá compilado!");
 ```
 
 ### Ler um arquivo.
 ```js
 // file: readFile.js
-var fs = require('fs');
+import fs from 'fs';
 
-fs.readFile('./meusArquivos/hello-world.txt', 'utf8', function (err, data) {
-	if (err) throw err;
-	console.log(data);
+const write = fs.writeFileSync("./hello.txt","Tá tranquilo, Tá compilado!");
 });
 ```
 
 ### Editar conteúdo desse arquivo.
 ```js
 // file: updateFile.js
-var fs = require('fs');
+import fs from 'fs';
 
 fs.writeFileSync('./meusArquivos/hello-world.txt','Aprendendo NodeJS com meus professores =]');
 ```
@@ -146,9 +144,9 @@ fs.writeFileSync('./meusArquivos/hello-world.txt','Aprendendo NodeJS com meus pr
 ```js
 // file: deleteFile.js
 
-var fs = require('fs');
+import fs from 'fs';
 
-fs.unlink('renameFile.txt', function(err){
+fs.unlink('renameFile.txt', err => {
 	if(err) throw err;
 	console.log('Deletado com sucesso');
 });
@@ -157,20 +155,18 @@ fs.unlink('renameFile.txt', function(err){
 ### Renomear o arquivo.
 ```js
 // file: renameFile.js
-var fs = require('fs');
+import fs from 'fs';
 
-fs.rename('./meusArquivos/hello-world.txt', './meusArquivos/helloWorld.txt', function (err) {
+fs.rename('./meusArquivos/hello-world.txt', './meusArquivos/helloWorld.txt', err => {
 	if (err) throw err;
 })
 ```
 
 ## Desafio: Criar um servidor web de arquivos estáticos.
 ```js
-'use strict';
-
-const http = require('http'), 
-fs = require('fs'), 
-port = 3000;
+import http from 'http';
+import fs from 'fs';
+const port = 3000;
 
 // create directory for files.
 try{
@@ -183,9 +179,9 @@ try{
 }
 
 
-http.createServer(function(req, res){
+http.createServer((req, res) => {
 
-		var path = 'files'+req.url;
+		const path = `files${req.url}`;
 
 		try{
 			fs.accessSync(path, fs.R_OK);
@@ -193,17 +189,17 @@ http.createServer(function(req, res){
 			if(fs.lstatSync(path).isDirectory()){
 				res.writeHeader(200, {"Content-Type": "text/html;charset=utf-8"});
 				try{
-				var indexPath = path+'/index.html';
+				const indexPath = `${path}/index.html`;
 				res.write(fs.readFileSync(indexPath, 'utf-8'));
 				}catch(e){
-					var files = fs.readdirSync(path);
+					const files = fs.readdirSync(path);
 					files.forEach(nome =>{
-						res.write('<a href="'+req.url+'/'+nome+'">'+nome+'</a><br>');
+						res.write(`<a href="${req.url}/${nome}">${nome}</a><br>`);
 					});
 				}
 
 			}else{
-				var typeFile = path.split(".");
+				const typeFile = path.split(".");
 				switch(typeFile[typeFile.length-1]){
 					case 'css':
 					res.writeHeader(200, {"Content-Type": "text/css"});
@@ -229,7 +225,7 @@ http.createServer(function(req, res){
 		res.end();
 
 }).listen(port, () => {
-	console.log('Server rodando em localhost: '+port);
+	console.log(`Server rodando em localhost: ${port}`);
 });
 ```
 <b>Acessando servidor:</b>
