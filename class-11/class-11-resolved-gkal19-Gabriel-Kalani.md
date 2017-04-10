@@ -19,9 +19,7 @@
 
 ```js
 // schema.js
-'use strict';
-
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 const nome = {type: String, required: true};
 const email = {type: String, required: true};
@@ -35,15 +33,12 @@ const _schema = {
 
 const UserSchema = new mongoose.Schema(_schema);
 
-module.exports = UserSchema;
+export default UserSchema;
 ```
 
 ```js
-// user-model.js
-'use strict'
-
 require("./db-config");
-const UserSchema = require('./schema');
+import UserSchema from './schema';
 const UserModel = require('./model')("Usuarios",UserSchema);
 
 const callback = (err, data, res) => {
@@ -57,16 +52,14 @@ const CRUD = {
   }
 }
 
-module.exports = CRUD;
+export default CRUD;
 ```
 
 ```js
 // ex01.js
-'use strict'
-
-const express = require('express');
+import express from 'express';
 const app = express();
-const UserModel = require('./user-model');
+import UserModel from './user-model';
 
 
 app.get('/user/:nome/:email/:cpf', (req, res) => {
@@ -146,10 +139,8 @@ Retorno:
 
 ```js
 // user-model.js
-'use strict'
-
 require("./db-config");
-const UserSchema = require('./schema');
+import UserSchema from './schema';
 const UserModel = require('./model')("Usuarios",UserSchema);
 
 const callback = (err, data, res) => {
@@ -166,24 +157,22 @@ const CRUD = {
   }
 }
 
-module.exports = CRUD;
+export default CRUD;
 ```
 
 ```js
 // ex02.js
-'use strict'
-
-const express = require('express');
+import express from 'express';
 const app = express();
-const util = require('util');
-const UserModel = require('./user-model');
+import util from 'util';
+import UserModel from './user-model';
 
- app.get('/find', (req,res) =>{
-     const q = req.query.q;
-     console.log(q);
-     const query = {nome: q};
-     UserModel.retrive(res, query);    
- });
+app.get('/find', (req,res) =>{
+    const q = req.query.q;
+    console.log(q);
+    const query = {nome: q};
+    UserModel.retrive(res, query);    
+});
 
 
 app.listen(3000, () => {
@@ -207,12 +196,10 @@ Retorno:
 
 ```js
 // ex03.js
-'use strict'
-
-const express = require('express');
+import express from 'express';
 const app = express();
-const util = require('util');
-const UserModel = require('./user-model');
+import util from 'util';
+import UserModel from './user-model';
 
 
 app.get('/find', (req,res) =>{
@@ -260,24 +247,22 @@ Retorno:
 
 ```js
 // ex04.js
-'use strict'
-
-const express = require('express');
+import express from 'express';
 const app = express();
-const fs = require('fs');
-const bodyParser = require('index');
-const UserModel = require('./user-model');
+import fs from 'fs';
+import bodyParser from 'index';
+import UserModel from './user-model';
 
 app.use(bodyParser.json()); // transformar em json
 app.use(bodyParser.urlencoded({extended : true}));
- app.post('/user', (req,res) =>{
-    UserModel.create(res,req.body);
- });
+app.post('/user', (req,res) =>{
+   UserModel.create(res,req.body);
+});
 
-  app.get('/', (req,res) =>{
-     res.set('Content-type', 'text/html');
-     fs.createReadStream('./index.html').pipe(res);
- });
+app.get('/', (req,res) =>{
+   res.set('Content-type', 'text/html');
+   fs.createReadStream('./index.html').pipe(res);
+});
 
 app.listen(3000, () => {
   console.log('Servidor rodando na porta 3000');
@@ -362,14 +347,12 @@ Retorno:
 
 ```js
 // ex05.js
-'use strict'
-
-const express = require('express');
+import express from 'express';
 const app = express();
-const fs = require('fs');
-const bodyParser = require('body-parser');
-const formidable = require('formidable');
-const UserModel = require('./user-model');
+import fs from 'fs';
+import bodyParser from 'body-parser';
+import formidable from 'formidable';
+import UserModel from './user-model';
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
@@ -413,14 +396,12 @@ Retorno:
 
 ```js
 // ex06.js
-'use strict'
-
 require ('./db-config');
-const express = require('express');
+import express from 'express';
 const app = express();
 const router = express.Router(); //cria objeto router para redirecionar as requisiçoes para o destino correto.
-const UserModel = require('./user-model');
-const querystring = require('querystring');
+import UserModel from './user-model';
+import querystring from 'querystring';
 /*
 No all nunca utilize funcoes de retorno de algum dado ou modifiquem o formulário.
  */
@@ -432,10 +413,10 @@ router.all('*',(req,res,next) => { // router.all é executado para todos os verb
 
 
 router.post('/new', (req, res) => {
-	var body = [];
-	req.on('data', function(chunk) {
+	let body = [];
+	req.on('data', chunk => {
  		body.push(chunk);
-	}).on('end', function() {
+	}).on('end', () => {
   	body = Buffer.concat(body).toString();
   	const obj = querystring.parse(body);
 		UserModel.create(res, obj);
@@ -452,10 +433,10 @@ router.get('/find', (req,res) =>{
 
 router.put('/:id', (req,res) => {
 	const id = req.params.id;
-	var body = [];
-	req.on('data', function(chunk) {
+	let body = [];
+	req.on('data', chunk => {
  		body.push(chunk);
-	}).on('end', function() {
+	}).on('end', () => {
   	body = Buffer.concat(body).toString();
   	const obj = querystring.parse(body);
   	UserModel.update(res,{"_id": id}, obj);
@@ -621,12 +602,10 @@ Retorno:
 ### 3 - Integrar as funções do CRUD do Mongoose com o Express.
 ```js
 // app.js
-'use strict'
-
 require ('./config/db-config');
-const express = require('express');
+import express from 'express';
 const app = express();
-const BookAPI = require('./routes-book');
+import BookAPI from './routes-book';
 
 app.use('/api/books', BookAPI);
 
@@ -825,8 +804,7 @@ Retorno:
 > O arquivo abaixo é o meu antigo `callback.js`
 
 ```js
-'use strict';
-module.exports = (err,data,res,page,maxPages) => {
+export default (err,data,res,page,maxPages) => {
   if (err) {
     res.writeHead(404);
       res.end(err.toString());
@@ -839,8 +817,7 @@ module.exports = (err,data,res,page,maxPages) => {
 
 ```js
 // error.js
-'use strict';
-module.exports = (err,res) => {
+export default (err,res) => {
     res.writeHead(404);
     return res.end(err.toString());
 };
@@ -849,9 +826,9 @@ module.exports = (err,res) => {
 > Esse arquivo abaixo também é o meu `callback.js` antigo, porém melhorei ele para a chamada do módulo do erro, com a ajuda do meu amigo stackoverflow rsrs
 
 ```js
-'use strict';
-const error = require('./error');
-module.exports = (err,data,res,page,maxPages) => {
+import error from './error';
+
+export default (err,data,res,page,maxPages) => {
   if (err) error(err,res);
   res.writeHead(200, {'Content-Type': 'application/json'});
   return res.end(JSON.stringify(data));
@@ -873,20 +850,17 @@ Express Generator
 
 ```js
 // app.js
-'use strict';
-
 require('./config/db-config');
-const express = require('express');
-const path = require('path');
-const favicon = require('serve-favicon');
-const logger = require('morgan');
-const cookieParser = require('cookie-parser');
-const bodyParser = require('body-parser');
+import express from 'express';
+import path from 'path';
+import favicon from 'serve-favicon';
+import logger from 'morgan';
+import cookieParser from 'cookie-parser';
+import bodyParser from 'body-parser';
+import routes from './routes/index';
+import UsersApi from './modules/Users/routes';
 
-const routes = require('./routes/index');
-const UsersApi = require('./modules/Users/routes');
-
-var app = express();
+const app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -904,8 +878,8 @@ app.use('/', routes);
 app.use('/api/users', UsersApi);
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  var err = new Error('Not Found');
+app.use((req, res, next) => {
+  const err = new Error('Not Found');
   err.status = 404;
   next(err);
 });
@@ -915,7 +889,7 @@ app.use(function(req, res, next) {
 // development error handler
 // will print stacktrace
 if (app.get('env') === 'development') {
-  app.use(function(err, req, res, next) {
+  app.use((err, req, res, next) => {
     res.status(err.status || 500);
     res.render('error', {
       message: err.message,
@@ -926,14 +900,14 @@ if (app.get('env') === 'development') {
 
 // production error handler
 // no stacktraces leaked to user
-app.use(function(err, req, res, next) {
+app.use((err, req, res, next) => {
   res.status(err.status || 500);
   res.render('error', {
     message: err.message,
     error: {}
   });
 });
-module.exports = app;
+export default app;
 ```
 
 ```
