@@ -10,13 +10,13 @@ function name(nome, callback){
   if (typeof nome === 'string') {  
     return callback(null, nome);  
   } else {  
-    var err = new Error("Opa! Parece que você não digitou uma string.");  
+    const err = new Error("Opa! Parece que você não digitou uma string.");  
 
     return callback(err, null);  
   }  
 }  
 
-name("Gabriel Kalani", function (err, nome){  
+name("Gabriel Kalani", (err, nome) => {  
   if (err) {  
     console.log(err);  
   } else {  
@@ -37,18 +37,18 @@ Gabriel Kalani
 
 ```js  
 function sum (num1, num2, callback) {
-  setTimeout(function () {
+  setTimeout(() => {
     if (typeof num1 == "number" && typeof num2 == "number") {
-      var result = num1 + num2;
+      const result = num1 + num2;
       callback(null, result);
     } else {
-      var error = new Error("Ué?! Cadê o número?");
+      const error = new Error("Ué?! Cadê o número?");
       return callback(error, null);
     }
   }, 30);
 }
 
-sum(4, 4, function (err, result) {
+sum(4, 4, (err, result) => {
   if (err) {
     console.log(err);
   } else {
@@ -69,18 +69,18 @@ Desktop\Gabriel\workshop-be-mean\nodejs\callbacks>node numbers.js
 
 ```js  
 function sum (num1, num2, callback) {
-  setTimeout(function () {
+  setTimeout(() => {
     if (typeof num1 == "number" && typeof num2 == "number") {
-      var result = (num1 + num2)/ 2;
+      const result = (num1 + num2)/ 2;
       callback(null, result);
     } else {
-      var error = new Error("Ué?! Cadê o número?");
+      const error = new Error("Ué?! Cadê o número?");
       return callback(error, null);
     }
   }, 30);
 }
 
-sum(4, 4, function (err, result) {
+sum(4, 4, (err, result) => {
   if (err) {
     console.log(err);
   } else {
