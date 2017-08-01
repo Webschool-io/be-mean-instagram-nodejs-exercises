@@ -10,7 +10,7 @@ CRUD | Descrição | Verbo |
 C|Create|POST
 R|Read|GET
 U|Update|PUT
-D|Delete|DELETE
+D|Delete|DELETE 
 
 
 ## Para que foram inventados os Status Codes? Dê exemplo de 1 código por grupo e a imagem do [Cat Status Code](https://http.cat/).
