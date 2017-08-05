@@ -24,26 +24,28 @@
 ## 1. Crie um função que extenda EventEmitter, nela crie um method chamado init, ele deverá ser chamado toda vez que a sua função for iniciada. Use o código 04 como base (use ele no prototype).
 
 ```js
-var EventEmitter = require('events').EventEmitter;
-var util = require('util');
+const EventEmitter = require('events').EventEmitter;
+const util = require('util');
 
-function User(data) {
-  this.name = data.name;
-  this.on('user:init', Name);
-  EventEmitter.call(this);
-};
+class User {
+  constructor(data) {
+    this.name = data.name;
+    this.on('user:init', Name);
+    EventEmitter.call(this);
+  }
+
+  init() {
+    this.emit('user:init', this.name);
+  }
+}
 
 util.inherits(User, EventEmitter);
 
-User.prototype.init = function() {
-  this.emit('user:init', this.name);
-};
-
 function Name(name) {
   console.log('Tá tranquilo, tá compilado. Meu nome é MC', name);
-};
+}
 
-var User = new User({name: 'Pokémon'});
+const User = new User({name: 'Pokémon'});
 User.init();
 ```
 ## Resultado 01
@@ -60,17 +62,17 @@ Tá tranquilo, tá compilado. Meu nome é MC Pokémon
 const fs = require('fs');
 
 function readDir(path) {
-  return new Promise( function (resolve, reject) {
-    fs.readdir(path, function (err, data) {
+  return new Promise( (resolve, reject) => {
+    fs.readdir(path, (err, data) => {
       err ? reject(err) : resolve(data);
     });
   });
 }
 
 // Executando
-readDir('node_modules').then(function (data) {
+readDir('node_modules').then(data => {
   console.log(data);
-}).catch(function (err) {
+}).catch(err => {
   console.log(err);
 });
 
@@ -104,7 +106,7 @@ const pokemonSchema = new mongoose.Schema({
 const PokemonModel = mongoose.model('pokemons', pokemonSchema);
 
 // Aqui está os dados do schema do meu Pokémon
-var pokemon = {
+const pokemon = {
   name: 'Bulbasaur',
   attack: 100,
   defense: 100,

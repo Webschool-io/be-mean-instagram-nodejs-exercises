@@ -11,19 +11,19 @@
 const express = require('express');
 const app = express();
 
-app.get('/', function (req, res) {
+app.get('/', (req, res) => {
   res.redirect('admin');
 })
-.get('/admin', function(req,res) {
+.get('/admin', (req, res) => {
   res.send('Rota de Admin');
 });
 /*app.use(function(req, res, next) {
   res.status(404).send('Nada encontrado!');
 });*/
-app.get('*', function(req, res){
+app.get('*', (req, res) => {
   res.send('<section align="center"><h1>O que houve?! Tivemos um 404 aqui.</h1><hr><img src="https://raw.githubusercontent.com/Webschool-io/be-mean-instagram/master/Apostila/module-nodejs/src/aula-express/public/logo-webschool.png"></section>', 404);
 });
-app.listen(3000, function () {
+app.listen(3000, () => {
   console.log('Servidor rodando em localhost:3000');
 });
 ```
@@ -37,27 +37,27 @@ app.listen(3000, function () {
 
 ```js
 // 200
-app.get('/', function (req, res) {
+app.get('/', (req, res) => {
     res.status(200).send('AEE CARAI, DE BOA!')
 });
 
 // 201
-app.get('/', function (req, res) {
+app.get('/', (req, res) => {
     res.status(201).send('DE BOA!')
 });
 
 // 202
-app.get('/', function (req, res) {
+app.get('/', (req, res) => {
     res.status(202).send('EHH, PODE SER!')
 });
 
 // 405
-app.get('/', function (req, res) {
+app.get('/', (req, res) => {
     res.status(405).send('NÃO PERMITIDO!')
 });
 
 // 500
-app.get('/', function (req, res) {
+app.get('/', (req, res) => {
     res.status(500).send('ERRO NO SERVIDOR!')
 });
 ```

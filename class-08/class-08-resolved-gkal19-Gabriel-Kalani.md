@@ -166,29 +166,29 @@ const Schema = require('./schema');
 const Model = require('./model')(Schema, 'atomicos');  
 
 const CRUD = {  
-  create: function(data) {  
+  create(data) {  
     console.log("create: ", data);  
     const AmoticosModel = new Model(data);  
-    AmoticosModel.save(function (err, data) {  
+    AmoticosModel.save((err, data) => {  
       if (err) return console.log('ERRO: ', err);  
       return console.log('Inseriu:', data);  
     });  
   },  
-  retrieve: function(query) {  
-    Model.find(query, function (err, data) {  
+  retrieve(query) {  
+    Model.find(query, (err, data) => {  
       if (err) return console.log('ERRO: ', err);  
       return console.log('Buscou:', data);  
     });  
   },  
-  update: function(query, mod, options) {  
+  update(query, mod, options) {  
     var options = options || {};  
-    Model.update(query, mod, options, function (err, data) {  
+    Model.update(query, mod, options, (err, data) => {  
       if (err) return console.log('ERRO: ', err);  
       return console.log('Alterou:', data);  
     });  
   },  
-  delete: function(query) {  
-    Model.remove(query, function (err, data) {  
+  delete(query) {  
+    Model.remove(query, (err, data) => {  
       if (err) return console.log('ERRO: ', err);  
       return console.log('Deletou:', data);  
     });  
@@ -301,7 +301,7 @@ const query  = { attack: {$lte: 5 } };
 const mod = { type: 'eletric' };
 const options = { multi: true };
 
-Model.findAndModify(query, [], mod, options, function (err, data) {
+Model.findAndModify(query, [], mod, options, (err, data) => {
   if (err) return console.log('Erro: ', err);
   return console.log('Alterado: ', data);
 });
@@ -317,7 +317,7 @@ Alterado:  { value: null, ok: 1 }
 const query = { name: /Pikachu/i};
 const mod = { type: 'Electric' };
 
-Model.findOneAndUpdate(query, mod, {}, function (err, data) {
+Model.findOneAndUpdate(query, mod, {}, (err, data) => {
   if (err) return console.log('Erro: ', err);
   return console.log('Alterado: ', data);
 })
@@ -331,7 +331,7 @@ const query = { attack: {$lte: 10}};
 const mod = {attack: 50};
 const options = {multi: true};
 
-Model.findOneAndUpdate(query, mod, options, function (err, data) {
+Model.findOneAndUpdate(query, mod, options, (err, data) => {
   if (err) return console.log('Erro: ', err);
   return console.log('Alterado: ', data);
 });
@@ -345,7 +345,7 @@ const query = {$and: [{type: 'fire'}, {attack: {$gte: 5}}]};
 const mod = {attack: 51, description: 'update attack'};
 const options = {multi: true};
 
-Model.findOneAndUpdate(query, mod, options, function (err, data) {
+Model.findOneAndUpdate(query, mod, options, (err, data) => {
   if (err) return console.log('Erro: ', err);
   return console.log('Alterado: ', data);
 });
@@ -359,7 +359,7 @@ Alterado:  { value: null, ok: 1 }
 ```js
 const query = { attack: null };
 
-Model.findOneAndRemove(query, function (err, data) {
+Model.findOneAndRemove(query, (err, data) => {
   if (err) return console.log('Erro: ', err);
   return console.log('Removeu: ', data);
 });
@@ -372,7 +372,7 @@ Removido:  { value: null, ok: 1 }
 ```js
 const query = { $and: [{type: 'grass'}, {attack: {$gte: 100}}]};
 
-Model.findOneAndRemove(query, function (err, data) {
+Model.findOneAndRemove(query, (err, data) => {
   if (err) return console.log('Erro: ', err);
   return console.log('Removeu: ', data);
 });
@@ -385,7 +385,7 @@ Removido:  { value: null, ok: 1 }
 ```js
 const query = {attack: {$lte: 10}};
 
-Model.findOneAndRemove(query, function (err, data) {
+Model.findOneAndRemove(query, (err, data) => {
   if (err) return console.log('Erro: ', err);
   return console.log('Removeu: ', data);
 });
@@ -475,27 +475,27 @@ const Schema = require('./schema');
 const Model = require('./model')(Schema, 'bruxos');  
 
 const CRUD = {  
-  create: function(data) {  
+  create(data) {  
     console.log("Criado: ", data);  
     const bruxoModel = new Model(data);  
-    bruxoModel.save(function (err, data) {  
+    bruxoModel.save((err, data) => {  
       if (err) return console.log('ERRO: ', err);  
       return console.log('Inseriu:', data);  
     });  
   },  
-  retrieve: function(query) {  
+  retrieve(query) {  
     Schema  
       .virtual('name.full')  
       .get(function (){  
-        return this.name.first + ' ' + this.name.last;  
+        return `${this.name.first} ${this.name.last}`;  
       });  
 
-    Model.findById(query, function (err, data) {  
+    Model.findById(query, (err, data) => {  
       if (err) return console.log('ERRO: ', err);  
       return console.log('Nome: ', data.name.full, '\nTipo de bruxo: ', data.weight_class, '\nIdade: ', data.age);  
     });  
   },  
-  retrieve_method: function(query){  
+  retrieve_method(query) {  
     Schema.methods.findSimilarType = function findSimilarType (callback) {  
       return this.model('Categoria', Schema);  
     };  
@@ -505,7 +505,7 @@ const CRUD = {
 
     
   },  
-  retrieve_static: function(query) {  
+  retrieve_static(query) {  
     Schema.statics.search = function (name, callback) {  
       return this.where('name', new RegExp(name, 'i')).exec(callback);  
     };  
@@ -514,21 +514,21 @@ const CRUD = {
 
   
   },  
-  retrieve_middleware: function(query){  
+  retrieve_middleware(query) {  
     const countQuery = Model.where(query).count((err, count) => {  
       if (err) return console.log('ERRO: ', err);  
-      return console.log('Existem ' + count + ' bruxos com a mesma idade!');  
+      return console.log(`Existem ${count} bruxos com a mesma idade!`);  
     });  
   },  
-  update: function(query, mod, options) {  
+  update(query, mod, options) {  
     var options = options || {};  
-    Model.update(query, mod, options, function (err, data) {  
+    Model.update(query, mod, options, (err, data) => {  
       if (err) return console.log('ERRO: ', err);  
       return console.log('Alterado:', data);  
     });  
   },  
-  delete: function(query) {  
-    Model.remove(query, function (err, data) {  
+  delete(query) {  
+    Model.remove(query, (err, data) => {  
       if (err) return console.log('ERRO: ', err);  
       return console.log('Deletado:', data);  
     });  
