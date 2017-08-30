@@ -91,19 +91,19 @@ gkal19:~/workspace/dever/nodejs $ mocha add.spec.js
 // calc.js
 'use strict';  
 
-let sum  = (a,b) => a+b;  
-let sub  = (a,b) => a-b;  
-let mult = (a,b) => a*b;  
-let div  = (a,b) => a === 0 || b === 0 ? 0 : a / b;  
-let sqtr = a => Math.sqrt(a);  
+let sum  = (a,b) => a+b;
+let sub  = (a,b) => a-b;
+let mult = (a,b) => a*b;
+let div  = (a,b) => a === 0 || b === 0 ? 0 : a / b;
+let sqtr = a => Math.sqrt(a);
 
 
 module.exports = {  
-	sum  : sum,  
-	sub  : sub,  
-	mult : mult,  
-	div  : div,  
-	sqtr : sqtr  
+  sum,  
+  sub,  
+  mult,  
+  div,  
+  sqtr 
 };  
 ```
 
@@ -114,33 +114,33 @@ module.exports = {
 const expect = require('chai').expect;  
 const calc = require('./calc');  
 
-describe('calc', function() {  
-	describe('calc testing',  () => {  
-		it('sum of two number',  () => {  
-			expect(calc.sum(1,1)).to.equal(2);  
-		});  
+describe('calc', () => {  
+  describe('calc testing',  () => {  
+    it('sum of two number',  () => {  
+      expect(calc.sum(1,1)).to.equal(2);  
+    });  
 
-		it('sub of two number',  () => {  
-			expect(calc.sub(2,5)).to.equal(-3);  
-		});  
+    it('sub of two number',  () => {  
+      expect(calc.sub(2,5)).to.equal(-3);  
+    });  
 
-		it('mult of two number',  () => {  
-			expect(calc.mult(5,5)).to.equal(25);  
-		});  
+    it('mult of two number',  () => {  
+      expect(calc.mult(5,5)).to.equal(25);  
+    });  
 
-		it('div of two number',  () => {  
-			expect(calc.div(15,5)).to.equal(3);  
-		});  
+    it('div of two number',  () => {  
+      expect(calc.div(15,5)).to.equal(3);  
+    });  
 
-		it('div of two number dont aceept div by zero',  () => {  
-			expect(calc.div(15,0)).to.equal(0);  
-			expect(calc.div(0,1)).to.equal(0);  
-		});  
+    it('div of two number dont aceept div by zero',  () => {  
+      expect(calc.div(15,0)).to.equal(0);  
+      expect(calc.div(0,1)).to.equal(0);  
+    });  
 
-		it('sqtr of a number',  () => {  
-			expect(calc.sqtr(16)).to.equal(3);  
-		});  
-	});  
+    it('sqtr of a number',  () => {  
+      expect(calc.sqtr(16)).to.equal(3);  
+    });  
+  });  
 });  
 ```
 
